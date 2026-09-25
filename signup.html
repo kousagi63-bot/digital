@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your Stackly Digital account — Admin or Client." />
+  <title>Sign Up — Stackly Digital</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <main class="auth">
+    <div class="auth__glow auth__glow--1"></div>
+    <div class="auth__glow auth__glow--2"></div>
+
+    <div class="auth__wrap auth__wrap--wide">
+      <div class="auth-card" data-reveal="scale">
+        <a class="auth-card__logo" href="index.html" aria-label="Stackly Digital homepage">
+          <img src="images/logo.webp" alt="Stackly Digital" />
+        </a>
+        <div class="auth-card__head">
+          <span class="auth-card__icon"><i class="bi bi-stars"></i></span>
+          <h1 class="auth-card__title">Create your account</h1>
+          <p class="auth-card__sub">Tell us who you are and we'll set up your dashboard.</p>
+        </div>
+
+        <form class="auth-form" id="signupForm" novalidate>
+          <fieldset class="auth-roles" id="roleGroup">
+            <legend>I am a…</legend>
+            <div class="row g-3">
+              <div class="col-6">
+                <label class="auth-role">
+                  <input type="radio" name="role" value="admin" class="auth-role__input" />
+                  <span class="auth-role__card">
+                    <span class="auth-role__icon"><i class="bi bi-person-gear"></i></span>
+                    <span class="auth-role__name">Admin</span>
+                    <span class="auth-role__desc">Manage clients, campaigns, reports &amp; billing</span>
+                    <span class="auth-role__check"><i class="bi bi-check-lg"></i></span>
+                  </span>
+                </label>
+              </div>
+              <div class="col-6">
+                <label class="auth-role">
+                  <input type="radio" name="role" value="client" class="auth-role__input" />
+                  <span class="auth-role__card">
+                    <span class="auth-role__icon"><i class="bi bi-person-check"></i></span>
+                    <span class="auth-role__name">Client</span>
+                    <span class="auth-role__desc">Track campaigns, reports, files &amp; billing</span>
+                    <span class="auth-role__check"><i class="bi bi-check-lg"></i></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="invalid-feedback auth-roles__error" id="roleError">Please select your role.</div>
+          </fieldset>
+
+          <div class="auth-field auth-field--first">
+            <label class="auth-label" for="signupName">Full name</label>
+            <div class="auth-input">
+              <i class="bi bi-person auth-input__icon"></i>
+              <input type="text" class="form-control" id="signupName" name="name" placeholder="Alex Chen" autocomplete="name" />
+            </div>
+            <div class="invalid-feedback">Full name is required.</div>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="signupEmail">Email address</label>
+            <div class="auth-input">
+              <i class="bi bi-envelope auth-input__icon"></i>
+              <input type="email" class="form-control" id="signupEmail" name="email" placeholder="you@company.com" autocomplete="email" />
+            </div>
+            <div class="invalid-feedback">Email is required.</div>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="signupPassword">Password</label>
+            <div class="auth-input">
+              <i class="bi bi-lock auth-input__icon"></i>
+              <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Uppercase, lowercase, number & special char" autocomplete="new-password" />
+              <button type="button" class="auth-input__btn" data-toggle-password data-target="#signupPassword" aria-label="Show password">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">Password is required.</div>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="signupConfirm">Confirm password</label>
+            <div class="auth-input">
+              <i class="bi bi-lock-fill auth-input__icon"></i>
+              <input type="password" class="form-control" id="signupConfirm" name="confirm" placeholder="Re-enter your password" autocomplete="new-password" />
+              <button type="button" class="auth-input__btn" data-toggle-password data-target="#signupConfirm" aria-label="Show password">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">Confirm your password.</div>
+          </div>
+
+          <div class="auth-consent" id="consentGroup">
+            <label class="form-check auth-consent__check" for="agreeTerms">
+              <input type="checkbox" class="form-check-input" id="agreeTerms" name="agreeTerms" />
+              <span class="form-check-label">
+                I agree to the <a href="404.html">Terms &amp; Conditions</a> and <a href="404.html">Privacy Policy</a>
+              </span>
+            </label>
+            <div class="invalid-feedback" id="consentError">You must agree to the Terms &amp; Conditions and Privacy Policy before creating an account.</div>
+          </div>
+
+          <button type="submit" class="btn btn-gradient auth-submit">
+            Create account <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+        </form>
+
+        <div class="auth-card__foot">
+          <a class="auth-card__home" href="index.html"><i class="bi bi-house"></i> Back to Home</a>
+        </div>
+      </div>
+
+      <aside class="auth-promo" data-reveal="right" data-delay="0.12">
+        <span class="auth-promo__tag"><i class="bi bi-stars"></i> Join 120+ brands on the platform</span>
+        <h2 class="auth-promo__title">Less guesswork. <span>More growth.</span></h2>
+        <p class="auth-promo__text">Create your account and unlock the same dashboards, campaign insights, and reporting our clients rely on every single day.</p>
+
+        <ul class="auth-promo__list">
+          <li>
+            <i class="bi bi-graph-up-arrow"></i>
+            <span><strong>Digital Transformation</strong><small>ROAS-focused paid media across search, social, and display.</small></span>
+          </li>
+          <li>
+            <i class="bi bi-search"></i>
+            <span><strong>Search &amp; SEO</strong><small>Rank-winning content and technical SEO that compounds.</small></span>
+          </li>
+          <li>
+            <i class="bi bi-bullseye"></i>
+            <span><strong>Conversion &amp; CRO</strong><small>Data-driven experiments that turn traffic into revenue.</small></span>
+          </li>
+          <li>
+            <i class="bi bi-palette"></i>
+            <span><strong>Brand &amp; Web</strong><small>Premium identity, web design, and creative that converts.</small></span>
+          </li>
+        </ul>
+
+        <div class="auth-promo__stats">
+          <div class="auth-promo__stat"><strong>120<em>+</em></strong><span>Brands scaled</span></div>
+          <div class="auth-promo__stat"><strong>3.2<em>×</em></strong><span>Avg. ROAS</span></div>
+          <div class="auth-promo__stat"><strong>4.9<em>★</em></strong><span>Client rating</span></div>
+        </div>
+
+        <blockquote class="auth-promo__quote">
+          <i class="bi bi-quote"></i>
+          <div>
+            <p>&ldquo;The team treats our business like their own. Every campaign is transparent, on-track, and clearly reported.&rdquo;</p>
+            <span>Riley Smith, Founder · Atlas &amp; Co.</span>
+          </div>
+        </blockquote>
+      </aside>
+
+      <p class="auth__foot">© 2026 Stackly Digital · <a href="404.html">Privacy</a> · <a href="404.html">Terms</a></p>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/email-validation.js"></script>
+  <script src="js/password-validation.js"></script>
+  <script src="js/name-validation.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

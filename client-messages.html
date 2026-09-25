@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Northwind Co. Client Portal — message your Stackly Digital account team." />
+  <title>Messages — Northwind Co. Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body style="background:#050505;">
+
+  <div class="dash-shell">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="dash-sidebar" aria-label="Client navigation">
+      <div class="dash-sidebar__head">
+        <a class="dash-sidebar__brand" href="index.html">
+          <img src="images/logo.webp" alt="Stackly Digital" class="dash-sidebar__logo" />
+        </a>
+        <button class="dash-sidebar__close" type="button" aria-label="Close navigation"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="dash-sidebar__role">Client Portal</div>
+
+      <ul class="dash-nav">
+        <li class="dash-nav__group">Main</li>
+        <li><a class="dash-nav__link" href="client.html"><i class="bi bi-grid-1x2"></i> Overview</a></li>
+        <li><a class="dash-nav__link" href="client-campaigns.html"><i class="bi bi-megaphone"></i> Campaigns</a></li>
+        <li><a class="dash-nav__link" href="client-reports.html"><i class="bi bi-graph-up"></i> Reports</a></li>
+        <li><a class="dash-nav__link" href="client-files.html"><i class="bi bi-folder2-open"></i> Files</a></li>
+        <li><a class="dash-nav__link is-active" href="client-messages.html"><i class="bi bi-chat-dots"></i> Messages <span class="dash-nav__badge">3</span></a></li>
+        <li><a class="dash-nav__link" href="client-billing.html"><i class="bi bi-receipt"></i> Billing</a></li>
+
+        <li class="dash-nav__group">Growth</li>
+        <li><a class="dash-nav__link" href="client-roadmap.html"><i class="bi bi-signpost-split"></i> Growth Roadmap</a></li>
+        <li><a class="dash-nav__link" href="client-goals.html"><i class="bi bi-bullseye"></i> KPI Scorecard</a></li>
+        <li><a class="dash-nav__link" href="client-calendar.html"><i class="bi bi-calendar3"></i> Transformation Calendar</a></li>
+
+        <li class="dash-nav__group">Account</li>
+        <li><a class="dash-nav__link" href="client-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+        <li><a class="dash-nav__link" href="client-support.html"><i class="bi bi-life-preserver"></i> Support</a></li>
+      </ul>
+
+      <div class="dash-sidebar__foot">
+        <div class="dash-user">
+          <span class="dash-user__avatar">AC</span>
+          <div class="dash-user__meta">
+            <div class="dash-user__name">Alex Chen</div>
+            <div class="dash-user__plan">Northwind Co. · Growth</div>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-outline-light btn-sm w-100" data-signout><i class="bi bi-box-arrow-right me-1"></i> Sign Out</a>
+        <a href="index.html" class="btn btn-outline-light btn-sm w-100"><i class="bi bi-box-arrow-right me-1"></i> Back to site</a>
+      </div>
+    </aside>
+
+    <div class="dash-backdrop" aria-hidden="true"></div>
+
+    <!-- ========== MAIN ========== -->
+    <div class="dash-main">
+      <header class="dash-topbar">
+        <button class="dash-topbar__hamburger" type="button" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+        <div class="dash-topbar__title">Client Portal</div>
+
+        <div class="dash-icons">
+
+          <div class="dash-profile">
+            <span class="dash-profile__avatar">A</span>
+            <span class="dash-profile__info">
+              <span class="dash-profile__name">Alex Chen</span>
+              <span class="dash-profile__email">alex@northwind.co</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <main class="dash-content">
+
+        <div class="dash-heading">
+          <div>
+            <h1>Messages</h1>
+            <p>Talk directly with your account manager.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Thread -->
+          <div class="col-lg-7">
+            <div class="dash-card h-100 d-flex flex-column" data-reveal>
+              <div class="dash-card__head">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="dash-user__avatar" style="width:44px;height:44px;">SC</span>
+                  <div>
+                    <h2 class="dash-card__title mb-0">Sam Carter</h2>
+                    <div class="dash-card__sub">Account Manager @ Stackly Digital · active</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-grow-1 d-flex flex-column gap-2" style="min-height:300px;">
+                <div class="dash-msg">
+                  <div class="dash-row__main">
+                    <div class="dash-card__sub mb-1">Sam · Sep 21, 9:41 AM</div>
+                    <div class="dash-row__sub" style="white-space:normal;">Morning Alex — the Q4 creative set is ready for your review. Two new ad variants are outperforming the control by 31%. Link below.</div>
+                  </div>
+                  <div class="dash-msg__time">2d</div>
+                </div>
+                <div class="dash-msg">
+                  <div class="dash-row__main">
+                    <div class="dash-card__sub mb-1">You · Sep 21, 2:15 PM</div>
+                    <div class="dash-row__sub" style="white-space:normal;">Nice, reviewing now. Can we also reallocate budget from Email Nurture? It's been flat for two weeks.</div>
+                  </div>
+                  <div class="dash-msg__time">2d</div>
+                </div>
+                <div class="dash-msg">
+                  <div class="dash-row__main">
+                    <div class="dash-card__sub mb-1">Sam · Sep 23, 8:02 AM</div>
+                    <div class="dash-row__sub" style="white-space:normal;">Done — we moved $1.5k from Email Nurture into Demand Capture. You can see the updated pacing on the Campaigns page. 🚀</div>
+                  </div>
+                  <div class="dash-msg__time">now</div>
+                </div>
+              </div>
+              <form class="dash-form mt-3" action="404.html" method="get">
+                <label for="reply">Reply to Sam</label>
+                <textarea class="form-control" id="reply" name="message" rows="3" placeholder="Type your message..." required></textarea>
+                <button class="btn btn-gradient btn-sm mt-3" type="submit"><i class="bi bi-send me-1"></i> Send message</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Recent threads -->
+          <div class="col-lg-5">
+            <div class="dash-card h-100" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Recent Conversations</h2>
+                  <div class="dash-card__sub">All threads with your team</div>
+                </div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-user__avatar" style="width:40px;height:40px;">SC</span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Sam Carter · Account Manager</div>
+                  <div class="dash-row__sub">We moved $1.5k from Email Nurture...</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="dash-row__hint">now</div>
+                  <span class="b-chip b-chip--olive" style="margin-top:4px;">2 new</span>
+                </div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-user__avatar" style="width:40px;height:40px;">NP</span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Nia Patel · Content</div>
+                  <div class="dash-row__sub">Landing page copy 2.0 is uploaded...</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="dash-row__hint">1d</div>
+                  <span class="b-chip b-chip--olive" style="margin-top:4px;">1 new</span>
+                </div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-user__avatar" style="width:40px;height:40px;">JW</span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Jordan Wells · Design</div>
+                  <div class="dash-row__sub">Logo refresh concepts for review...</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="dash-row__hint">3d</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

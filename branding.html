@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly Digital branding — brand strategy, visual identity, and campaign creative designed to make you impossible to ignore." />
+  <title>Branding — Stackly Digital</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" id="siteNav">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html">
+        <img src="images/logo.webp" alt="Stackly Digital logo" class="brand__logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end nav-offcanvas" tabindex="-1" id="navMenu" aria-labelledby="navMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title brand" id="navMenuLabel">
+            <img src="images/logo.webp" alt="Stackly Digital logo" class="brand__logo brand__logo--offcanvas" />
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link active" href="branding.html">Branding</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="nav-cta">
+            <a href="login.html" class="btn btn-gradient">Login <i class="bi bi-box-arrow-in-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <header class="page-hero" id="top">
+    <div class="hero__bg">
+      <img src="images/bg3.webp" alt="Brand color palette and stationery" class="hero__bg-img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container position-relative">
+      <div class="page-hero__content">
+        <div class="hero__badge" data-hero="badge">
+          <i class="bi bi-fire"></i> Brand & Creative
+        </div>
+        <h1 class="page-hero__title" data-hero="title">Brands people<br /><span class="text-gradient">remember and trust.</span></h1>
+        <p class="page-hero__desc" data-hero="desc">
+          Identity systems, messaging, and campaign creative built to make your brand impossible to ignore — consistent across every touchpoint.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== BRANDING ========== -->
+  <section class="section branding themed-light" id="branding">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <div class="branding__media" data-reveal="right">
+            <img
+              src="images/branding-sketches.webp"
+              alt="Brand identity sketches and moodboards"
+              class="branding__img branding__img--main"
+              loading="lazy"
+            />
+            <img
+              src="images/branding-palette-float.webp"
+              alt="Brand color palette and stationery"
+              class="branding__img branding__img--float"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <span class="section-tag" data-reveal>Why Branding Matters</span>
+          <h3 class="branding__lead" data-reveal>A complete branding system,<br />from strategy to launch.</h3>
+          <p class="section-sub" data-reveal>
+            We design brands that convert — positioning, voice, and visuals engineered to stand out in crowded markets and hold up at scale.
+          </p>
+
+          <div class="about__features">
+            <div class="feature" data-reveal>
+              <div class="feature__icon"><i class="bi bi-compass"></i></div>
+              <div>
+                <h5>Brand Strategy</h5>
+                <p>Positioning, audience insight, and messaging architecture that give your brand a sharp point of view.</p>
+              </div>
+            </div>
+            <div class="feature" data-reveal>
+              <div class="feature__icon"><i class="bi bi-palette"></i></div>
+              <div>
+                <h5>Visual Identity</h5>
+                <p>Logos, typography, color systems, and guidelines that feel premium everywhere they appear.</p>
+              </div>
+            </div>
+            <div class="feature" data-reveal>
+              <div class="feature__icon"><i class="bi bi-film"></i></div>
+              <div>
+                <h5>Campaign Creative</h5>
+                <p>Ad creative, motion, and content assets that win attention and convert it into demand.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="404.html" class="btn btn-gradient btn-lg mt-4" data-reveal>Start Your Rebrand <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BRANDING PROCESS ========== -->
+  <section class="section process themed-dark">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>Brand Process</span>
+        <h2 class="section-title mx-auto" data-reveal>From insight to icon,<br /><span class="text-gradient">in four steps.</span></h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+          <div class="process-step" data-reveal>
+            <span class="process-step__num">01</span>
+            <div class="process-step__icon"><i class="bi bi-binoculars"></i></div>
+            <h5>Discover & Audit</h5>
+            <p>Market research, audience interviews, and brand audits that surface the real opportunity.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="process-step" data-reveal>
+            <span class="process-step__num">02</span>
+            <div class="process-step__icon"><i class="bi bi-compass"></i></div>
+            <h5>Strategy & Position</h5>
+            <p>Positioning, personality, and messaging architecture that give your brand a sharp point of view.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="process-step" data-reveal>
+            <span class="process-step__num">03</span>
+            <div class="process-step__icon"><i class="bi bi-palette"></i></div>
+            <h5>Design & Identity</h5>
+            <p>Logo, typography, color system, and motion — a full identity system crafted to scale.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="process-step" data-reveal>
+            <span class="process-step__num">04</span>
+            <div class="process-step__icon"><i class="bi bi-rocket-takeoff"></i></div>
+            <h5>Guidelines & Launch</h5>
+            <p>Playbooks, templates, and launch assets that keep the brand consistent everywhere it shows up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="section stats themed-light">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3">
+          <div class="stat" data-reveal>
+            <strong><span data-count="120">0</span><em class="stat-suffix">+</em></strong>
+            <span>Brands Built</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat" data-reveal>
+            <strong><span data-count="85">0</span><em class="stat-suffix">%</em></strong>
+            <span>Client Retention</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat" data-reveal>
+            <strong><span data-count="47">0</span><em class="stat-suffix">%</em></strong>
+            <span>Avg. AOV Lift</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat" data-reveal>
+            <strong><span data-count="8">0</span><em class="stat-suffix">+</em></strong>
+            <span>Brand Awards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BRANDING WORK ========== -->
+  <section class="section work themed-dark">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>Brand Work</span>
+        <h2 class="section-title mx-auto" data-reveal>Identities<br /><span class="text-gradient">we're proud of.</span></h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 work-item" data-category="brand" data-reveal="fade">
+          <a href="404.html" class="work-card">
+            <div class="work-card__img">
+              <img src="images/d4.webp" alt="Lumina Cosmetics brand palette" loading="lazy" />
+              <div class="work-card__overlay">
+                <span class="work-card__tag">Branding</span>
+                <h4>Lumina Cosmetics</h4>
+                <p>Rebrand that lifted AOV by 47%</p>
+                <span class="work-card__arrow"><i class="bi bi-arrow-up-right"></i></span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 work-item" data-category="brand" data-reveal="fade">
+          <a href="404.html" class="work-card">
+            <div class="work-card__img">
+              <img src="images/d2.webp" alt="Kaizen Coffee launch campaign" loading="lazy" />
+              <div class="work-card__overlay">
+                <span class="work-card__tag">Branding</span>
+                <h4>Kaizen Coffee</h4>
+                <p>Launch campaign sold out in 72 hours</p>
+                <span class="work-card__arrow"><i class="bi bi-arrow-up-right"></i></span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 work-item" data-category="brand" data-reveal="fade">
+          <a href="404.html" class="work-card">
+            <div class="work-card__img">
+              <img src="images/d3.webp" alt="Mosaic Studio brand identity" loading="lazy" />
+              <div class="work-card__overlay">
+                <span class="work-card__tag">Branding</span>
+                <h4>Mosaic Studio</h4>
+                <p>Full identity + launch in 8 weeks</p>
+                <span class="work-card__arrow"><i class="bi bi-arrow-up-right"></i></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DELIVERABLES ========== -->
+  <section class="section deliverables themed-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <span class="section-tag" data-reveal>What You Get</span>
+          <h2 class="section-title" data-reveal>Everything you need to<br /><span class="text-gradient">launch and scale.</span></h2>
+          <p class="section-sub" data-reveal>Every engagement ships a complete, ready-to-use system — not a folder of unused files.</p>
+          <a href="404.html" class="btn btn-gradient btn-lg mt-4" data-reveal>Get a Brand Kit <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="deliverables-card" data-reveal>
+            <ul class="checklist">
+              <li><i class="bi bi-check2-circle"></i> Brand strategy &amp; positioning</li>
+              <li><i class="bi bi-check2-circle"></i> Logo suite (primary, marks, icons)</li>
+              <li><i class="bi bi-check2-circle"></i> Typography &amp; color systems</li>
+              <li><i class="bi bi-check2-circle"></i> Visual &amp; messaging guidelines</li>
+              <li><i class="bi bi-check2-circle"></i> Brand voice &amp; messaging framework</li>
+              <li><i class="bi bi-check2-circle"></i> Stationery &amp; social templates</li>
+              <li><i class="bi bi-check2-circle"></i> Transformation collateral suite</li>
+              <li><i class="bi bi-check2-circle"></i> Launch campaign creative</li>
+              <li><i class="bi bi-check2-circle"></i> Brand training workshop</li>
+              <li><i class="bi bi-check2-circle"></i> Source files &amp; asset library</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BRAND PACKAGES ========== -->
+  <section class="section pricing themed-dark" id="packages">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>Brand Packages</span>
+        <h2 class="section-title mx-auto" data-reveal>Fixed-scope packages,<br /><span class="text-gradient">clear pricing.</span></h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Brand Kit -->
+        <div class="col-md-6 col-lg-4">
+          <div class="price-card" data-reveal>
+            <h5 class="price-card__name">Brand Kit</h5>
+            <p class="price-card__desc">For early-stage brands that need a sharp, simple identity.</p>
+            <div class="price-card__price">
+              <span class="currency">$</span>
+              <span class="amount" data-monthly="4,900" data-annual="3,920">4,900</span>
+              <span class="period">/kit</span>
+            </div>
+            <ul class="price-card__features">
+              <li><i class="bi bi-check2"></i> Positioning &amp; strategy sprint</li>
+              <li><i class="bi bi-check2"></i> Logo suite &amp; color system</li>
+              <li><i class="bi bi-check2"></i> Typography &amp; basic guidelines</li>
+              <li><i class="bi bi-check2"></i> Social media templates</li>
+              <li class="muted"><i class="bi bi-x"></i> Stationery &amp; collateral</li>
+            </ul>
+            <a href="404.html" class="btn btn-outline-light w-100">Start a Kit</a>
+          </div>
+        </div>
+
+        <!-- Full Identity (featured) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="price-card price-card--featured" data-reveal="scale">
+            <span class="price-card__badge">Most Popular</span>
+            <h5 class="price-card__name">Full Identity</h5>
+            <p class="price-card__desc">A complete brand system for brands ready to go to market.</p>
+            <div class="price-card__price">
+              <span class="currency">$</span>
+              <span class="amount" data-monthly="9,800" data-annual="7,840">9,800</span>
+              <span class="period">/project</span>
+            </div>
+            <ul class="price-card__features">
+              <li><i class="bi bi-check2"></i> Everything in Brand Kit</li>
+              <li><i class="bi bi-check2"></i> Full brand guidelines book</li>
+              <li><i class="bi bi-check2"></i> Stationery &amp; collateral suite</li>
+              <li><i class="bi bi-check2"></i> Transformation &amp; pitch templates</li>
+              <li><i class="bi bi-check2"></i> Launch campaign creative</li>
+            </ul>
+            <a href="404.html" class="btn btn-gradient w-100">Get Full Identity</a>
+          </div>
+        </div>
+
+        <!-- Brand + Launch -->
+        <div class="col-md-6 col-lg-4">
+          <div class="price-card" data-reveal>
+            <h5 class="price-card__name">Brand + Launch</h5>
+            <p class="price-card__desc">Identity plus a 90-day brand launch campaign, end to end.</p>
+            <div class="price-card__price">
+              <span class="currency">$</span>
+              <span class="amount" data-monthly="18,500" data-annual="14,800">18,500</span>
+              <span class="period">/project</span>
+            </div>
+            <ul class="price-card__features">
+              <li><i class="bi bi-check2"></i> Everything in Full Identity</li>
+              <li><i class="bi bi-check2"></i> Complete campaign creative</li>
+              <li><i class="bi bi-check2"></i> Media planning &amp; buying</li>
+              <li><i class="bi bi-check2"></i> Dedicated launch pod</li>
+              <li><i class="bi bi-check2"></i> Brand training workshop</li>
+            </ul>
+            <a href="404.html" class="btn btn-outline-light w-100">Plan a Launch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="section cta themed-light">
+    <div class="cta__bg">
+      <img src="images/cta-team.webp" alt="Team working together" loading="lazy" />
+      <div class="cta__overlay"></div>
+    </div>
+    <div class="container position-relative">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-9 col-xl-8">
+          <span class="section-tag" data-reveal>Let's Build Something</span>
+          <h2 class="section-title mx-auto" data-reveal>
+            Ready to give your brand<br /><span class="text-gradient">a sharper point of view?</span>
+          </h2>
+          <p class="cta__desc" data-reveal>Tell us about your brand — we'll come back within 24 hours with a tailored branding plan and no-obligation audit.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3" data-reveal>
+            <a href="404.html" class="btn btn-gradient btn-lg">Start Your Rebrand <i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="404.html" class="btn btn-outline-light btn-lg">See Our Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEWSLETTER ========== -->
+  <section class="newsletter themed-dark">
+    <div class="container">
+      <div class="newsletter-panel" data-reveal="scale">
+        <span class="newsletter-chip newsletter-chip--tl"><i class="bi bi-graph-up-arrow"></i> 14x Organic Traffic</span>
+        <span class="newsletter-chip newsletter-chip--br"><i class="bi bi-trophy"></i> 250+ Projects Shipped</span>
+
+        <span class="newsletter-panel__badge"><i class="bi bi-envelope-paper"></i> The Stackly Digest</span>
+        <h2 class="newsletter-panel__title">Growth playbooks,<br /><span class="text-gradient">straight to your inbox.</span></h2>
+        <p class="newsletter-panel__desc">One sharp, actionable email every other Tuesday. Zero fluff, unsubscribe any time.</p>
+
+        <form class="newsletter-panel__form" id="newsletterForm">
+          <div class="newsletter-panel__input-row">
+            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email for newsletter" required />
+            <button class="btn btn-gradient" type="submit">Subscribe <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+          <small id="newsletterNote" role="status" aria-live="polite"></small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer themed-dark">
+    <div class="container">
+      <div class="row g-4 pt-5">
+
+        <div class="col-lg-3 col-md-6">
+          <a href="index.html" class="brand brand--footer">
+            <img src="images/logo.webp" alt="Stackly Digital logo" class="brand__logo" />
+          </a>
+          <p class="footer__about">A premium digital transformation agency helping ambitious brands scale with strategy, creativity, and performance transformation.</p>
+          <div class="footer__social">
+            <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="404.html" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="404.html" aria-label="Dribbble"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer__heading">Company</h6>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="branding.html">Branding</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer__heading">Services</h6>
+          <ul class="footer__links">
+            <li><a href="404.html">SEO</a></li>
+            <li><a href="404.html">Paid Media</a></li>
+            <li><a href="404.html">Branding</a></li>
+            <li><a href="404.html">Web Design</a></li>
+            <li><a href="404.html">CRO</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer__heading">Resources</h6>
+          <ul class="footer__links">
+            <li><a href="404.html">Case Studies</a></li>
+            <li><a href="404.html">Brand Packages</a></li>
+            <li><a href="404.html">Latest Work</a></li>
+            <li><a href="404.html">All Services</a></li>
+            <li><a href="404.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h6 class="footer__heading">Get in Touch</h6>
+          <ul class="footer__contact">
+            <li><i class="bi bi-geo-alt"></i> 120 Innovation Drive, Suite 400, San Francisco, CA 94107</li>
+            <li><i class="bi bi-envelope"></i> <a href="404.html">hello@stacklydigital.com</a></li>
+            <li><i class="bi bi-telephone"></i> <a href="404.html">+1 (415) 555-0123</a></li>
+          </ul>
+        </div>
+
+<hr class="footer__divider" />
+
+      <div class="row align-items-center pb-4">
+        <div class="col-md-6">
+          <p class="footer__copy mb-0">&copy; 2026 Stackly Digital. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html" class="ms-3">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/email-validation.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

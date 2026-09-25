@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Northwind Co. Client Portal — upcoming campaigns, content and launches." />
+  <title>Transformation Calendar — Northwind Co. Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body style="background:#050505;">
+
+  <div class="dash-shell">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="dash-sidebar" aria-label="Client navigation">
+      <div class="dash-sidebar__head">
+        <a class="dash-sidebar__brand" href="index.html">
+          <img src="images/logo.webp" alt="Stackly Digital" class="dash-sidebar__logo" />
+        </a>
+        <button class="dash-sidebar__close" type="button" aria-label="Close navigation"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="dash-sidebar__role">Client Portal</div>
+
+      <ul class="dash-nav">
+        <li class="dash-nav__group">Main</li>
+        <li><a class="dash-nav__link" href="client.html"><i class="bi bi-grid-1x2"></i> Overview</a></li>
+        <li><a class="dash-nav__link" href="client-campaigns.html"><i class="bi bi-megaphone"></i> Campaigns</a></li>
+        <li><a class="dash-nav__link" href="client-reports.html"><i class="bi bi-graph-up"></i> Reports</a></li>
+        <li><a class="dash-nav__link" href="client-files.html"><i class="bi bi-folder2-open"></i> Files</a></li>
+        <li><a class="dash-nav__link" href="client-messages.html"><i class="bi bi-chat-dots"></i> Messages <span class="dash-nav__badge">3</span></a></li>
+        <li><a class="dash-nav__link" href="client-billing.html"><i class="bi bi-receipt"></i> Billing</a></li>
+
+        <li class="dash-nav__group">Growth</li>
+        <li><a class="dash-nav__link" href="client-roadmap.html"><i class="bi bi-signpost-split"></i> Growth Roadmap</a></li>
+        <li><a class="dash-nav__link" href="client-goals.html"><i class="bi bi-bullseye"></i> KPI Scorecard</a></li>
+        <li><a class="dash-nav__link is-active" href="client-calendar.html"><i class="bi bi-calendar3"></i> Transformation Calendar</a></li>
+
+        <li class="dash-nav__group">Account</li>
+        <li><a class="dash-nav__link" href="client-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+        <li><a class="dash-nav__link" href="client-support.html"><i class="bi bi-life-preserver"></i> Support</a></li>
+      </ul>
+
+      <div class="dash-sidebar__foot">
+        <div class="dash-user">
+          <span class="dash-user__avatar">AC</span>
+          <div class="dash-user__meta">
+            <div class="dash-user__name">Alex Chen</div>
+            <div class="dash-user__plan">Northwind Co. · Growth</div>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-outline-light btn-sm w-100" data-signout><i class="bi bi-box-arrow-right me-1"></i> Sign Out</a>
+        <a href="index.html" class="btn btn-outline-light btn-sm w-100"><i class="bi bi-box-arrow-right me-1"></i> Back to site</a>
+      </div>
+    </aside>
+
+    <div class="dash-backdrop" aria-hidden="true"></div>
+
+    <!-- ========== MAIN ========== -->
+    <div class="dash-main">
+      <header class="dash-topbar">
+        <button class="dash-topbar__hamburger" type="button" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+        <div class="dash-topbar__title">Client Portal</div>
+
+        <div class="dash-icons">
+
+          <div class="dash-profile">
+            <span class="dash-profile__avatar">A</span>
+            <span class="dash-profile__info">
+              <span class="dash-profile__name">Alex Chen</span>
+              <span class="dash-profile__email">alex@northwind.co</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <main class="dash-content">
+
+        <div class="dash-heading">
+          <div>
+            <h1>Transformation Calendar</h1>
+            <p>Upcoming campaigns, content and launches — all in one timeline.</p>
+          </div>
+          <div class="dash-heading__meta d-flex align-items-center gap-2">
+            <a href="404.html" class="btn btn-gradient btn-sm"><i class="bi bi-calendar-plus me-1"></i> Request a slot</a>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="dash-stats">
+          <div class="dash-stat dash-stat--grad" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Live Now</span>
+              <span class="dash-stat__icon"><i class="bi bi-broadcast"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="3">0</div>
+            <div class="dash-stat__delta">Active campaigns today</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Scheduled</span>
+              <span class="dash-stat__icon"><i class="bi bi-calendar-event"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="8">0</div>
+            <div class="dash-stat__delta">Locked into the calendar</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Need Your Approval</span>
+              <span class="dash-stat__icon"><i class="bi bi-check2-square"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="2">0</div>
+            <div class="dash-stat__delta"><span class="down">Action needed</span> by Oct 1</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Drafts</span>
+              <span class="dash-stat__icon"><i class="bi bi-pencil-square"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="4">0</div>
+            <div class="dash-stat__delta">Being shaped by the team</div>
+          </div>
+        </div>
+
+        <!-- Calendar + side -->
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="dash-card" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Upcoming</h2>
+                  <div class="dash-card__sub">Ordered by publish / launch date</div>
+                </div>
+              </div>
+
+              <h3 class="dash-section-label">September 2026</h3>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(93,111,34,0.3);color:#c9d178;"><i class="bi bi-meta"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Autumn Sale — Meta carousels</div>
+                  <div class="dash-row__sub">Paid Social · Live Sep 24 – Oct 06 · Maya R.</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="b-chip b-chip--green">Live</div>
+                </div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(93,111,34,0.3);color:#c9d178;"><i class="bi bi-envelope"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Abandoned-cart email flow</div>
+                  <div class="dash-row__sub">Email · Sep 28 · Hazel N.</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="b-chip b-chip--mustard">Scheduled</div>
+                </div>
+              </div>
+              <div class="dash-row" style="border-bottom:1px solid var(--dash-border);">
+                <span class="dash-av" style="background:rgba(93,111,34,0.3);color:#c9d178;"><i class="bi bi-tiktok"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Holiday teaser shorts</div>
+                  <div class="dash-row__sub">Social · Sep 30 · Jae P.</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="b-chip b-chip--red">Needs approval</div>
+                </div>
+              </div>
+
+              <h3 class="dash-section-label">October 2026</h3>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(255,255,255,0.05);color:#d8d45a;"><i class="bi bi-search"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">SEO content wave — Q4 batch</div>
+                  <div class="dash-row__sub">SEO · Oct 05 · Priya S.</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="b-chip b-chip--grey">Scheduled</div>
+                </div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(255,255,255,0.05);color:#d8d45a;"><i class="bi bi-click"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Landing page AB test: hero v2</div>
+                  <div class="dash-row__sub">CRO · Oct 08 · Ana C.</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="b-chip b-chip--grey">Scheduled</div>
+                </div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(255,255,255,0.05);color:#d8d45a;"><i class="bi bi-megaphone"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Google Ads: holiday campaign</div>
+                  <div class="dash-row__sub">Paid Search · Oct 12 · Theo A.</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="b-chip b-chip--grey">Scheduled</div>
+                </div>
+              </div>
+              <div class="dash-row" style="border-bottom:none;">
+                <span class="dash-av" style="background:rgba(255,255,255,0.05);color:#d8d45a;"><i class="bi bi-share"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">LinkedIn thought-leadership series</div>
+                  <div class="dash-row__sub">Organic · Oct 15 · Hazel N.</div>
+                </div>
+                <div class="dash-row__right">
+                  <div class="b-chip b-chip--grey">Scheduled</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="dash-card mb-4" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">This Month at a Glance</h2>
+                  <div class="dash-card__sub">September 2026</div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-baseline mb-2">
+                  <div class="dash-row__title">Elapsed</div>
+                  <div class="dash-row__value">22/30 days</div>
+                </div>
+                <div class="dash-progress" data-value="73"><div class="dash-progress__bar"></div></div>
+              </div>
+              <div class="dash-row">
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Live now</div>
+                </div>
+                <div class="dash-row__right"><span class="b-chip b-chip--green">3</span></div>
+              </div>
+              <div class="dash-row">
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Scheduled</div>
+                </div>
+                <div class="dash-row__right"><span class="b-chip b-chip--mustard">8</span></div>
+              </div>
+              <div class="dash-row" style="border-bottom:none;">
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Drafts</div>
+                </div>
+                <div class="dash-row__right"><span class="b-chip b-chip--grey">4</span></div>
+              </div>
+            </div>
+
+            <div class="dash-card mb-4" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Needs Your Input</h2>
+                  <div class="dash-card__sub">Two decisions before Oct 1</div>
+                </div>
+              </div>
+              <div class="dash-row">
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Approve holiday creatives</div>
+                  <div class="dash-row__sub">Meta ads · due Sep 29</div>
+                </div>
+                <div class="dash-row__right"><a href="404.html" class="dash-card__link">Review</a></div>
+              </div>
+              <div class="dash-row" style="border-bottom:none;">
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Approve Q4 content brief</div>
+                  <div class="dash-row__sub">SEO · due Oct 01</div>
+                </div>
+                <div class="dash-row__right"><a href="404.html" class="dash-card__link">Review</a></div>
+              </div>
+            </div>
+
+            <div class="dash-note" data-reveal>
+              <i class="bi bi-lightbulb"></i>
+              <span>Want to drop something into the pipeline? Use <strong>Request a slot</strong> and we'll peek at feasibility.</span>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly Digital — Get to know the team and the process behind our award-winning digital transformation results." />
+  <title>About Us — Stackly Digital</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" id="siteNav">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html">
+        <img src="images/logo.webp" alt="Stackly Digital logo" class="brand__logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end nav-offcanvas" tabindex="-1" id="navMenu" aria-labelledby="navMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title brand" id="navMenuLabel">
+            <img src="images/logo.webp" alt="Stackly Digital logo" class="brand__logo brand__logo--offcanvas" />
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="branding.html">Branding</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="nav-cta">
+            <a href="login.html" class="btn btn-gradient">Login <i class="bi bi-box-arrow-in-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <header class="page-hero" id="top">
+    <div class="hero__bg">
+      <img src="images/bg1.webp" alt="Team collaborating around a laptop" class="hero__bg-img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container position-relative">
+      <div class="page-hero__content">
+        <div class="hero__badge" data-hero="badge">
+          <i class="bi bi-fire"></i> Why Stackly
+        </div>
+        <h1 class="page-hero__title" data-hero="title">Not just an agency —<br /><span class="text-gradient">your digital transformation team.</span></h1>
+        <p class="page-hero__desc" data-hero="desc">
+          We embed with your team, map your market, and connect strategy, technology, and creative to turn digital transformation into measurable growth.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about themed-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="about__media" data-reveal="left">
+            <img
+              src="images/about-strategy-meeting.webp"
+              alt="Creative team in a strategy meeting"
+              class="about__img about__img--main"
+              loading="lazy"
+            />
+            <img
+              src="images/about-collaboration-float.webp"
+              alt="Team collaborating around a laptop"
+              class="about__img about__img--float"
+              loading="lazy"
+            />
+            <div class="about__experience">
+              <strong data-count="12">0</strong>
+              <span>Years of<br />Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <span class="section-tag" data-reveal>Who We Are</span>
+          <h2 class="section-title" data-reveal>Founded to make<br /><span class="text-gradient">transformation accountable.</span></h2>
+          <p class="section-sub" data-reveal>
+            Stackly started in a co-working space with one belief: agencies should be judged by business outcomes, not deliverables. Twelve years and 250+ projects later, that belief hasn't changed — only the scale of results we deliver.
+          </p>
+
+          <div class="about__features">
+            <div class="feature" data-reveal>
+              <div class="feature__icon"><i class="bi bi-lightning-charge"></i></div>
+              <div>
+                <h5>Rapid Execution</h5>
+                <p>Strategy to launch in weeks, not quarters. Agile pods keep momentum high.</p>
+              </div>
+            </div>
+            <div class="feature" data-reveal>
+              <div class="feature__icon"><i class="bi bi-shield-check"></i></div>
+              <div>
+                <h5>Radical Transparency</h5>
+                <p>Live dashboards, weekly syncs, and honest reporting — no black boxes.</p>
+              </div>
+            </div>
+            <div class="feature" data-reveal>
+              <div class="feature__icon"><i class="bi bi-trophy"></i></div>
+              <div>
+                <h5>Outcome Obsessed</h5>
+                <p>We tie our success to yours with KPI-driven roadmaps and quarterly OKRs.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="404.html" class="btn btn-gradient btn-lg mt-4" data-reveal>Book a Free Strategy Call <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="section stats themed-dark">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3">
+          <div class="stat" data-reveal>
+            <strong><span data-count="250">0</span><em class="stat-suffix">+</em></strong>
+            <span>Projects Shipped</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat" data-reveal>
+            <strong><span data-count="180">0</span><em class="stat-suffix">+</em></strong>
+            <span>Happy Clients</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat" data-reveal>
+            <strong><span data-count="320">0</span><em class="stat-suffix">%</em></strong>
+            <span>Avg. Revenue Growth</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat" data-reveal>
+            <strong><span data-count="24">0</span></strong>
+            <span>Industry Awards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="section process themed-light">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>How We Work</span>
+        <h2 class="section-title mx-auto" data-reveal>A proven process,<br /><span class="text-gradient">refined over 12 years.</span></h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+          <div class="process-step" data-reveal>
+            <span class="process-step__num">01</span>
+            <div class="process-step__icon"><i class="bi bi-binoculars"></i></div>
+            <h5>Discover</h5>
+            <p>Deep-dive into your market, audience, and analytics to uncover the biggest growth levers.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="process-step" data-reveal>
+            <span class="process-step__num">02</span>
+            <div class="process-step__icon"><i class="bi bi-diagram-3"></i></div>
+            <h5>Strategize</h5>
+            <p>A prioritized roadmap with clear channels, budgets, timelines, and success metrics.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="process-step" data-reveal>
+            <span class="process-step__num">03</span>
+            <div class="process-step__icon"><i class="bi bi-rocket-takeoff"></i></div>
+            <h5>Execute</h5>
+            <p>Multi-disciplinary pods launch campaigns, content, and experiences at sprint speed.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="process-step" data-reveal>
+            <span class="process-step__num">04</span>
+            <div class="process-step__icon"><i class="bi bi-arrow-repeat"></i></div>
+            <h5>Optimize</h5>
+            <p>Continuous testing and iteration compound performance month over month.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TEAM ========== -->
+  <section class="section team themed-dark">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>The Team</span>
+        <h2 class="section-title mx-auto" data-reveal>Meet the people<br /><span class="text-gradient">behind the growth.</span></h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="team-card" data-reveal>
+            <div class="team-card__img">
+              <img src="images/team-marcus-vance.webp" alt="Marcus Webb" loading="lazy" />
+              <div class="team-card__social">
+                <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="404.html" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="404.html" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+            <div class="team-card__body">
+              <h5>Marcus Webb</h5>
+              <span>Founder & CEO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="team-card" data-reveal>
+            <div class="team-card__img">
+              <img src="images/p2.webp" alt="Ava Thompson" loading="lazy" />
+              <div class="team-card__social">
+                <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="404.html" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="404.html" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+            <div class="team-card__body">
+              <h5>Ava Thompson</h5>
+              <span>Head of Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="team-card" data-reveal>
+            <div class="team-card__img">
+              <img src="images/p3.webp" alt="Liam Carter" loading="lazy" />
+              <div class="team-card__social">
+                <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="404.html" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="404.html" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+            <div class="team-card__body">
+              <h5>Liam Carter</h5>
+              <span>Creative Director</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="team-card" data-reveal>
+            <div class="team-card__img">
+              <img src="images/p10.webp" alt="Sofia Reyes" loading="lazy" />
+              <div class="team-card__social">
+                <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="404.html" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="404.html" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+            <div class="team-card__body">
+              <h5>Sofia Reyes</h5>
+              <span>Head of Performance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VALUES / CULTURE ========== -->
+  <section class="section values themed-light">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>Our Values</span>
+        <h2 class="section-title mx-auto" data-reveal>What we stand for,<br /><span class="text-gradient">every single day.</span></h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="value-card" data-reveal>
+            <span class="value-card__num">01</span>
+            <div class="value-card__icon"><i class="bi bi-eye"></i></div>
+            <h5>Radical Transparency</h5>
+            <p>Live dashboards, honest numbers, and no surprises. You always know exactly where things stand.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="value-card" data-reveal>
+            <span class="value-card__num">02</span>
+            <div class="value-card__icon"><i class="bi bi-hammer"></i></div>
+            <h5>Craft Over Volume</h5>
+            <p>We'd rather ship one exceptional campaign than ten forgettable ones. Quality compounds.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="value-card" data-reveal>
+            <span class="value-card__num">03</span>
+            <div class="value-card__icon"><i class="bi bi-lightning-charge"></i></div>
+            <h5>Velocity</h5>
+            <p>Momentum wins markets. We test fast, learn faster, and iterate weekly — not quarterly.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="value-card" data-reveal>
+            <span class="value-card__num">04</span>
+            <div class="value-card__icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <h5>Outcome Obsessed</h5>
+            <p>KPIs and bottom-line impact drive every decision. Our success is measured in your growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section testimonials themed-dark" id="testimonials">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>Testimonials</span>
+        <h2 class="section-title mx-auto" data-reveal>What working with us<br /><span class="text-gradient">actually feels like.</span></h2>
+      </div>
+
+      <div class="testimonial-slider" data-reveal>
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <blockquote>"Stackly rebuilt our entire acquisition engine. We went from burning cash on ads to a predictable, profitable pipeline in under 90 days."</blockquote>
+              <div class="testimonial-card__author">
+                <img src="images/p1.webp" alt="Sarah Mitchell" loading="lazy" />
+                <div>
+                  <strong>Sarah Mitchell</strong>
+                  <span>CMO, PulseLab</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <blockquote>"They feel like an in-house team, not an agency. Fast, sharp, and genuinely invested in our outcomes. Best partner we've ever hired."</blockquote>
+              <div class="testimonial-card__author">
+                <img src="images/p2.webp" alt="David Chen" loading="lazy" />
+                <div>
+                  <strong>David Chen</strong>
+                  <span>CEO, Orbital FinTech</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <blockquote>"Organic traffic 14x'd in a year. What impressed us most was the transparency — we always knew exactly what was being worked on and why."</blockquote>
+              <div class="testimonial-card__author">
+                <img src="images/p3.webp" alt="Elena Rodriguez" loading="lazy" />
+                <div>
+                  <strong>Elena Rodriguez</strong>
+                  <span>VP Growth, Northwind</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-controls">
+          <button class="t-btn" id="tPrev" aria-label="Previous testimonial"><i class="bi bi-arrow-left"></i></button>
+          <div class="t-dots" id="tDots"></div>
+          <button class="t-btn" id="tNext" aria-label="Next testimonial"><i class="bi bi-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AWARDS ========== -->
+  <section class="section awards themed-light">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>Recognition</span>
+        <h2 class="section-title mx-auto" data-reveal>Awards that validate<br /><span class="text-gradient">the work we ship.</span></h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="award-card" data-reveal>
+            <div class="award-card__badge"><i class="bi bi-trophy"></i></div>
+            <div class="award-card__body">
+              <h5>Agency of the Year — Growth</h5>
+              <span>Digital Transformation Awards</span>
+            </div>
+            <span class="award-card__year">2026</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="award-card" data-reveal>
+            <div class="award-card__badge"><i class="bi bi-award"></i></div>
+            <div class="award-card__body">
+              <h5>Best Performance Campaign</h5>
+              <span>Digital Transformation Summit</span>
+            </div>
+            <span class="award-card__year">2025</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="award-card" data-reveal>
+            <div class="award-card__badge"><i class="bi bi-gem"></i></div>
+            <div class="award-card__body">
+              <h5>Best Brand Identity</h5>
+              <span>Global Brand Excellence Awards</span>
+            </div>
+            <span class="award-card__year">2025</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="award-card" data-reveal>
+            <div class="award-card__badge"><i class="bi bi-people"></i></div>
+            <div class="award-card__body">
+              <h5>Top Employer — 100+ Teams</h5>
+              <span>Industry Talent Survey</span>
+            </div>
+            <span class="award-card__year">2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== JOURNEY / TIMELINE ========== -->
+  <section class="section journey themed-dark">
+    <div class="container">
+      <div class="text-center mb-5 pb-3">
+        <span class="section-tag" data-reveal>Our Journey</span>
+        <h2 class="section-title mx-auto" data-reveal>12 years of<br /><span class="text-gradient">compounding growth.</span></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item" data-reveal="left">
+          <div class="timeline-card">
+            <span class="timeline-card__year">2014</span>
+            <h5>Founded in a co-working space</h5>
+            <p>Four people, one laptop, and a belief that agencies should be judged on business outcomes.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-reveal="right">
+          <div class="timeline-card">
+            <span class="timeline-card__year">2016</span>
+            <h5>First 50 clients shipped</h5>
+            <p>Word of mouth carried us — retention hit 90%, and we outgrew the co-working space.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-reveal="left">
+          <div class="timeline-card">
+            <span class="timeline-card__year">2019</span>
+            <h5>100th project &amp; first award</h5>
+            <p>Sofia joins to build our performance pod. We take home our first industry award.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-reveal="right">
+          <div class="timeline-card">
+            <span class="timeline-card__year">2022</span>
+            <h5>Expanded to full funnel</h5>
+            <p>Branding, creative, and CRO pods launch — one integrated growth engine, one team.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-reveal="left">
+          <div class="timeline-card">
+            <span class="timeline-card__year">2026</span>
+            <h5>Agency of the Year</h5>
+            <p>250+ projects, 24 awards, and a team of 40+ specialists helping brands scale worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAREERS ========== -->
+  <section class="section careers themed-light">
+    <div class="container">
+      <div class="row align-items-end mb-5 pb-3">
+        <div class="col-lg-7">
+          <span class="section-tag" data-reveal>Careers</span>
+          <h2 class="section-title" data-reveal>Come grow<br /><span class="text-gradient">with us.</span></h2>
+        </div>
+        <div class="col-lg-5 text-lg-end">
+          <p class="section-sub" data-reveal>We're always looking for sharp, humble people who care about craft and results.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="job-row" data-reveal>
+            <div class="job-row__title">
+              <h5>Senior Performance Marketer</h5>
+              <span>Full-time · San Francisco or Remote</span>
+            </div>
+            <div class="job-row__meta">
+              <span><i class="bi bi-cash-stack"></i> $110K–$140K</span>
+            </div>
+            <a href="404.html" class="btn btn-outline-dark">Apply</a>
+          </div>
+
+          <div class="job-row" data-reveal>
+            <div class="job-row__title">
+              <h5>Brand Designer</h5>
+              <span>Full-time · San Francisco</span>
+            </div>
+            <div class="job-row__meta">
+              <span><i class="bi bi-cash-stack"></i> $90K–$120K</span>
+            </div>
+            <a href="404.html" class="btn btn-outline-dark">Apply</a>
+          </div>
+
+          <div class="job-row" data-reveal>
+            <div class="job-row__title">
+              <h5>SEO Strategist</h5>
+              <span>Full-time · Remote</span>
+            </div>
+            <div class="job-row__meta">
+              <span><i class="bi bi-cash-stack"></i> $85K–$110K</span>
+            </div>
+            <a href="404.html" class="btn btn-outline-dark">Apply</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="value-card" data-reveal>
+            <div class="value-card__icon"><i class="bi bi-patch-question"></i></div>
+            <h5>Not seeing your role?</h5>
+            <p>Send us your portfolio and the kind of work you want to do. Great people always have a seat here.</p>
+            <a href="404.html" class="btn btn-gradient mt-3">Say Hello <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="section cta themed-light">
+    <div class="cta__bg">
+      <img src="images/cta-team.webp" alt="Team working together" loading="lazy" />
+      <div class="cta__overlay"></div>
+    </div>
+    <div class="container position-relative">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-9 col-xl-8">
+          <span class="section-tag" data-reveal>Let's Build Something</span>
+          <h2 class="section-title mx-auto" data-reveal>
+            Ready to work with<br /><span class="text-gradient">a team that delivers?</span>
+          </h2>
+          <p class="cta__desc" data-reveal>Tell us about your goals — we'll come back within 24 hours with a tailored growth plan and no-obligation audit.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3" data-reveal>
+            <a href="404.html" class="btn btn-gradient btn-lg">Get Started <i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="404.html" class="btn btn-outline-light btn-lg">See Our Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEWSLETTER ========== -->
+  <section class="newsletter themed-dark">
+    <div class="container">
+      <div class="newsletter-panel" data-reveal="scale">
+        <span class="newsletter-chip newsletter-chip--tl"><i class="bi bi-graph-up-arrow"></i> 14x Organic Traffic</span>
+        <span class="newsletter-chip newsletter-chip--br"><i class="bi bi-trophy"></i> 250+ Projects Shipped</span>
+
+        <span class="newsletter-panel__badge"><i class="bi bi-envelope-paper"></i> The Stackly Digest</span>
+        <h2 class="newsletter-panel__title">Growth playbooks,<br /><span class="text-gradient">straight to your inbox.</span></h2>
+        <p class="newsletter-panel__desc">One sharp, actionable email every other Tuesday. Zero fluff, unsubscribe any time.</p>
+
+        <form class="newsletter-panel__form" id="newsletterForm">
+          <div class="newsletter-panel__input-row">
+            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email for newsletter" required />
+            <button class="btn btn-gradient" type="submit">Subscribe <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+          <small id="newsletterNote" role="status" aria-live="polite"></small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer themed-dark">
+    <div class="container">
+      <div class="row g-4 pt-5">
+
+        <div class="col-lg-3 col-md-6">
+          <a href="index.html" class="brand brand--footer">
+            <img src="images/logo.webp" alt="Stackly Digital logo" class="brand__logo" />
+          </a>
+          <p class="footer__about">A premium digital transformation agency helping ambitious brands scale with strategy, creativity, and performance transformation.</p>
+          <div class="footer__social">
+            <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="404.html" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="404.html" aria-label="Dribbble"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer__heading">Company</h6>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="branding.html">Branding</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer__heading">Services</h6>
+          <ul class="footer__links">
+            <li><a href="404.html">SEO</a></li>
+            <li><a href="404.html">Paid Media</a></li>
+            <li><a href="404.html">Branding</a></li>
+            <li><a href="404.html">Web Design</a></li>
+            <li><a href="404.html">CRO</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer__heading">Resources</h6>
+          <ul class="footer__links">
+            <li><a href="404.html">Case Studies</a></li>
+            <li><a href="404.html">Brand Packages</a></li>
+            <li><a href="404.html">Latest Work</a></li>
+            <li><a href="404.html">All Services</a></li>
+            <li><a href="404.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h6 class="footer__heading">Get in Touch</h6>
+          <ul class="footer__contact">
+            <li><i class="bi bi-geo-alt"></i> 120 Innovation Drive, Suite 400, San Francisco, CA 94107</li>
+            <li><i class="bi bi-envelope"></i> <a href="404.html">hello@stacklydigital.com</a></li>
+            <li><i class="bi bi-telephone"></i> <a href="404.html">+1 (415) 555-0123</a></li>
+          </ul>
+        </div>
+
+<hr class="footer__divider" />
+
+      <div class="row align-items-center pb-4">
+        <div class="col-md-6">
+          <p class="footer__copy mb-0">&copy; 2026 Stackly Digital. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html" class="ms-3">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/email-validation.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

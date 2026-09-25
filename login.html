@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to your Stackly Digital workspace — Admin or Client." />
+  <title>Login — Stackly Digital</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <main class="auth">
+    <div class="auth__glow auth__glow--1"></div>
+    <div class="auth__glow auth__glow--2"></div>
+
+    <div class="auth__wrap">
+      <div class="auth-card" data-reveal="scale">
+        <a class="auth-card__logo" href="index.html" aria-label="Stackly Digital homepage">
+          <img src="images/logo.webp" alt="Stackly Digital" />
+        </a>
+        <div class="auth-card__head">
+          <span class="auth-card__icon"><i class="bi bi-shield-lock"></i></span>
+          <h1 class="auth-card__title">Welcome back</h1>
+          <p class="auth-card__sub">Sign in to your workspace and pick up where you left off.</p>
+        </div>
+
+        <form class="auth-form" id="loginForm" novalidate>
+          <fieldset class="auth-roles" id="roleGroup">
+            <legend>I am a…</legend>
+            <div class="row g-3">
+              <div class="col-6">
+                <label class="auth-role">
+                  <input type="radio" name="role" value="admin" class="auth-role__input" />
+                  <span class="auth-role__card">
+                    <span class="auth-role__icon"><i class="bi bi-person-gear"></i></span>
+                    <span class="auth-role__name">Admin</span>
+                    <span class="auth-role__desc">Manage clients, campaigns, reports &amp; billing</span>
+                    <span class="auth-role__check"><i class="bi bi-check-lg"></i></span>
+                  </span>
+                </label>
+              </div>
+              <div class="col-6">
+                <label class="auth-role">
+                  <input type="radio" name="role" value="client" class="auth-role__input" />
+                  <span class="auth-role__card">
+                    <span class="auth-role__icon"><i class="bi bi-person-check"></i></span>
+                    <span class="auth-role__name">Client</span>
+                    <span class="auth-role__desc">Track campaigns, reports, files &amp; billing</span>
+                    <span class="auth-role__check"><i class="bi bi-check-lg"></i></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="invalid-feedback auth-roles__error" id="roleError">Please select your role.</div>
+          </fieldset>
+
+          <div class="auth-field auth-field--first">
+            <label class="auth-label" for="loginEmail">Email address</label>
+            <div class="auth-input">
+              <i class="bi bi-envelope auth-input__icon"></i>
+              <input type="email" class="form-control" id="loginEmail" name="email" placeholder="you@company.com" autocomplete="email" />
+            </div>
+            <div class="invalid-feedback">Email is required.</div>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="loginPassword">Password</label>
+            <div class="auth-input">
+              <i class="bi bi-lock auth-input__icon"></i>
+              <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Enter your password" autocomplete="current-password" />
+              <button type="button" class="auth-input__btn" data-toggle-password data-target="#loginPassword" aria-label="Show password">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">Password is required.</div>
+          </div>
+
+          <div class="auth-options" id="authOptions">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="rememberMe" />
+              <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <a class="auth-link" href="404.html">Forgot password?</a>
+            <div class="invalid-feedback" id="rememberMeError">You must select Remember Me to log in.</div>
+          </div>
+
+          <button type="submit" class="btn btn-gradient auth-submit">
+            Login <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="auth-switch">New to Stackly? <a href="signup.html">Create an account</a></p>
+        </form>
+
+        <div class="auth-card__foot">
+          <a class="auth-card__home" href="index.html"><i class="bi bi-house"></i> Back to Home</a>
+        </div>
+      </div>
+
+      <aside class="auth-promo" data-reveal="right" data-delay="0.12">
+        <span class="auth-promo__tag"><i class="bi bi-stars"></i> Trusted by 120+ ambitious brands</span>
+        <h2 class="auth-promo__title">Strategy. Creativity. <span>Performance.</span></h2>
+        <p class="auth-promo__text">Stackly Digital brings your clients, campaigns, reports, and billing together in one seamless workspace — so nothing slips through the cracks.</p>
+
+        <ul class="auth-promo__list">
+          <li>
+            <i class="bi bi-graph-up-arrow"></i>
+            <span><strong>Digital Transformation</strong><small>ROAS-focused paid media across search, social, and display.</small></span>
+          </li>
+          <li>
+            <i class="bi bi-search"></i>
+            <span><strong>Search &amp; SEO</strong><small>Rank-winning content and technical SEO that compounds.</small></span>
+          </li>
+          <li>
+            <i class="bi bi-bullseye"></i>
+            <span><strong>Conversion &amp; CRO</strong><small>Data-driven experiments that turn traffic into revenue.</small></span>
+          </li>
+          <li>
+            <i class="bi bi-palette"></i>
+            <span><strong>Brand &amp; Web</strong><small>Premium identity, web design, and creative that converts.</small></span>
+          </li>
+        </ul>
+
+        <div class="auth-promo__stats">
+          <div class="auth-promo__stat"><strong>120<em>+</em></strong><span>Brands scaled</span></div>
+          <div class="auth-promo__stat"><strong>3.2<em>×</em></strong><span>Avg. ROAS</span></div>
+          <div class="auth-promo__stat"><strong>4.9<em>★</em></strong><span>Client rating</span></div>
+        </div>
+
+        <blockquote class="auth-promo__quote">
+          <i class="bi bi-quote"></i>
+          <div>
+            <p>&ldquo;Stackly more than doubled our qualified pipeline in six months — and the dashboards save our team hours every week.&rdquo;</p>
+            <span>Alex Chen, Growth Lead · Northwind Co.</span>
+          </div>
+        </blockquote>
+      </aside>
+
+      <p class="auth__foot">© 2026 Stackly Digital · <a href="404.html">Privacy</a> · <a href="404.html">Terms</a></p>
+    </div>
+  </main>
+
+  <!-- Forgot password modal -->
+  <div class="modal fade auth-modal" id="forgotModal" tabindex="-1" aria-labelledby="forgotModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgotModalLabel">Forgot your password?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="auth-modal__text">Enter the email linked to your account and we'll send you a secure reset link.</p>
+          <div class="auth-field">
+            <label class="auth-label" for="forgotEmail">Email address</label>
+            <div class="auth-input">
+              <i class="bi bi-envelope auth-input__icon"></i>
+              <input type="email" class="form-control" id="forgotEmail" placeholder="you@company.com" />
+            </div>
+            <div class="invalid-feedback" id="forgotError" style="display:none;">Enter a valid email address.</div>
+            <div class="auth-modal__success" id="forgotSuccess">
+              <i class="bi bi-check-circle-fill"></i> Reset link sent — check your inbox.
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-gradient auth-modal__btn" id="forgotSend">Send reset link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/email-validation.js"></script>
+  <script src="js/password-validation.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

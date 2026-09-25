@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly Digital Admin — proposals and sales pipeline across accounts." />
+  <title>Proposals — Admin · Stackly Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body style="background:#050505;">
+
+  <div class="dash-shell">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="dash-sidebar" aria-label="Admin navigation">
+      <div class="dash-sidebar__head">
+        <a class="dash-sidebar__brand" href="index.html">
+          <img src="images/logo.webp" alt="Stackly Digital" class="dash-sidebar__logo" />
+        </a>
+        <button class="dash-sidebar__close" type="button" aria-label="Close navigation"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="dash-sidebar__role">Admin Workspace</div>
+
+      <ul class="dash-nav">
+        <li class="dash-nav__group">Main</li>
+        <li><a class="dash-nav__link" href="admin.html"><i class="bi bi-grid-1x2"></i> Overview</a></li>
+        <li><a class="dash-nav__link" href="admin-campaigns.html"><i class="bi bi-megaphone"></i> Campaigns <span class="dash-nav__badge">86</span></a></li>
+        <li><a class="dash-nav__link" href="admin-clients.html"><i class="bi bi-people"></i> Clients <span class="dash-nav__badge">47</span></a></li>
+        <li><a class="dash-nav__link" href="admin-reports.html"><i class="bi bi-graph-up"></i> Reports</a></li>
+        <li><a class="dash-nav__link" href="admin-team.html"><i class="bi bi-person-gear"></i> Team</a></li>
+
+        <li class="dash-nav__group">Insights</li>
+        <li><a class="dash-nav__link" href="admin-analytics.html"><i class="bi bi-bar-chart"></i> Analytics</a></li>
+        <li><a class="dash-nav__link" href="admin-goals.html"><i class="bi bi-bullseye"></i> Goals &amp; OKRs</a></li>
+
+        <li class="dash-nav__group">Workspace</li>
+        <li><a class="dash-nav__link is-active" href="admin-proposals.html"><i class="bi bi-file-earmark-richtext"></i> Proposals <span class="dash-nav__badge">6</span></a></li>
+        <li><a class="dash-nav__link" href="admin-content.html"><i class="bi bi-file-earmark-text"></i> Content</a></li>
+        <li><a class="dash-nav__link" href="admin-files.html"><i class="bi bi-folder2-open"></i> Files</a></li>
+        <li><a class="dash-nav__link" href="admin-invoices.html"><i class="bi bi-receipt"></i> Invoices <span class="dash-nav__badge dash-nav__badge--line">2</span></a></li>
+        <li><a class="dash-nav__link" href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+      </ul>
+
+      <div class="dash-sidebar__foot">
+        <div class="dash-user">
+          <span class="dash-user__avatar">MR</span>
+          <div class="dash-user__meta">
+            <div class="dash-user__name">Maya Rivera</div>
+            <div class="dash-user__plan">Admin · Stackly HQ</div>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-outline-light btn-sm w-100" data-signout><i class="bi bi-box-arrow-right me-1"></i> Sign Out</a>
+        <a href="index.html" class="btn btn-outline-light btn-sm w-100"><i class="bi bi-box-arrow-right me-1"></i> Back to site</a>
+      </div>
+    </aside>
+
+    <div class="dash-backdrop" aria-hidden="true"></div>
+
+    <!-- ========== MAIN ========== -->
+    <div class="dash-main">
+      <header class="dash-topbar">
+        <button class="dash-topbar__hamburger" type="button" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+        <div class="dash-topbar__title">Admin Workspace</div>
+
+        <div class="dash-icons">
+
+          <div class="dash-profile">
+            <span class="dash-profile__avatar">M</span>
+            <span class="dash-profile__info">
+              <span class="dash-profile__name">Maya Rivera</span>
+              <span class="dash-profile__email">maya@stacklydigital.com</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <main class="dash-content">
+
+        <div class="dash-heading">
+          <div>
+            <h1>Proposals</h1>
+            <p>Track outstanding proposals and the sales pipeline.</p>
+          </div>
+          <div class="dash-heading__meta d-flex align-items-center gap-2">
+            <a href="404.html" class="btn btn-gradient btn-sm"><i class="bi bi-file-earmark-plus me-1"></i> New Proposal</a>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="dash-stats">
+          <div class="dash-stat dash-stat--grad" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Pipeline Value</span>
+              <span class="dash-stat__icon"><i class="bi bi-cash-stack"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="412800" data-format="money">0</div>
+            <div class="dash-stat__delta">Open deals across 6 proposals</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Open Deals</span>
+              <span class="dash-stat__icon"><i class="bi bi-diagram-3"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="18">0</div>
+            <div class="dash-stat__delta"><span class="up">+4</span> since last month</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Win Rate</span>
+              <span class="dash-stat__icon"><i class="bi bi-trophy"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="38" data-suffix="%">0</div>
+            <div class="dash-stat__delta"><span class="up">+6pp</span> vs Q2</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Avg. Deal Size</span>
+              <span class="dash-stat__icon"><i class="bi bi-pie-chart"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="12400" data-format="money">0</div>
+            <div class="dash-stat__delta">Blended across services</div>
+          </div>
+        </div>
+
+        <!-- Pipeline + forecast -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-8">
+            <div class="dash-card h-100" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Pipeline by Stage</h2>
+                  <div class="dash-card__sub">Live opportunities this quarter</div>
+                </div>
+              </div>
+              <div class="dash-filters">
+                <button class="pill-tag dash-filter is-active" data-filter="all" data-target="#pipelineTable" type="button">All</button>
+                <button class="pill-tag dash-filter" data-filter="discovery" data-target="#pipelineTable" type="button">Discovery</button>
+                <button class="pill-tag dash-filter" data-filter="proposal" data-target="#pipelineTable" type="button">Proposal sent</button>
+                <button class="pill-tag dash-filter" data-filter="negotiation" data-target="#pipelineTable" type="button">Negotiation</button>
+                <button class="pill-tag dash-filter" data-filter="won" data-target="#pipelineTable" type="button">Won</button>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-table" id="pipelineTable">
+                  <thead>
+                    <tr>
+                      <th>Deal</th>
+                      <th>Client</th>
+                      <th>Value</th>
+                      <th>Stage</th>
+                      <th>Likelihood</th>
+                      <th>ETA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-tag="proposal">
+                      <td>Q4 Paid Media Retainer</td>
+                      <td><div class="cell-user"><span class="cell-user__avatar">AB</span><div class="cell-user__meta"><div class="cell-user__name">Atlas Bikes</div></div></div></td>
+                      <td><span class="money">$48,000</span></td>
+                      <td><span class="b-chip b-chip--mustard">Proposal sent</span></td>
+                      <td>60%</td>
+                      <td>Oct 2</td>
+                    </tr>
+                    <tr data-tag="negotiation">
+                      <td>Creative Reshoot Sprint</td>
+                      <td><div class="cell-user"><span class="cell-user__avatar">HP</span><div class="cell-user__meta"><div class="cell-user__name">Hazel &amp; Pine</div></div></div></td>
+                      <td><span class="money">$22,500</span></td>
+                      <td><span class="b-chip b-chip--olive">Negotiation</span></td>
+                      <td>75%</td>
+                      <td>Sep 28</td>
+                    </tr>
+                    <tr data-tag="discovery">
+                      <td>SEO Audit &amp; Roadmap</td>
+                      <td><div class="cell-user"><span class="cell-user__avatar">MH</span><div class="cell-user__meta"><div class="cell-user__name">Meridian Health</div></div></div></td>
+                      <td><span class="money">$9,800</span></td>
+                      <td><span class="b-chip b-chip--grey">Discovery</span></td>
+                      <td>30%</td>
+                      <td>Oct 9</td>
+                    </tr>
+                    <tr data-tag="proposal">
+                      <td>Retention Program</td>
+                      <td><div class="cell-user"><span class="cell-user__avatar">BS</span><div class="cell-user__meta"><div class="cell-user__name">Bluepeak SaaS</div></div></div></td>
+                      <td><span class="money">$31,200</span></td>
+                      <td><span class="b-chip b-chip--mustard">Proposal sent</span></td>
+                      <td>55%</td>
+                      <td>Oct 5</td>
+                    </tr>
+                    <tr data-tag="won">
+                      <td>Landing Page Sprint</td>
+                      <td><div class="cell-user"><span class="cell-user__avatar">NC</span><div class="cell-user__meta"><div class="cell-user__name">Northwind Co.</div></div></div></td>
+                      <td><span class="money">$12,400</span></td>
+                      <td><span class="b-chip b-chip--green">Won</span></td>
+                      <td>100%</td>
+                      <td>Closed</td>
+                    </tr>
+                    <tr data-tag="negotiation">
+                      <td>Social Lift Package</td>
+                      <td><div class="cell-user"><span class="cell-user__avatar">FF</span><div class="cell-user__meta"><div class="cell-user__name">Fern &amp; Fawn</div></div></div></td>
+                      <td><span class="money">$18,900</span></td>
+                      <td><span class="b-chip b-chip--olive">Negotiation</span></td>
+                      <td>70%</td>
+                      <td>Oct 1</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="dash-card h-100" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Q4 Forecast</h2>
+                  <div class="dash-card__sub">By close likelihood</div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-baseline mb-2">
+                  <div class="dash-row__title">Committed (&gt; 70%)</div>
+                  <div class="dash-row__value" style="color:#c9d178;">$62.2k</div>
+                </div>
+                <div class="dash-progress" data-value="40"><div class="dash-progress__bar"></div></div>
+              </div>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-baseline mb-2">
+                  <div class="dash-row__title">Likely (40–70%)</div>
+                  <div class="dash-row__value">$112.4k</div>
+                </div>
+                <div class="dash-progress" data-value="55"><div class="dash-progress__bar"></div></div>
+              </div>
+              <div>
+                <div class="d-flex justify-content-between align-items-baseline mb-2">
+                  <div class="dash-row__title">Upside (&lt; 40%)</div>
+                  <div class="dash-row__value">$238.2k</div>
+                </div>
+                <div class="dash-progress" data-value="72"><div class="dash-progress__bar"></div></div>
+              </div>
+              <hr style="border-color:var(--dash-border);opacity:1;" />
+              <div class="d-flex justify-content-between align-items-baseline">
+                <div class="dash-row__title">Blended forecast</div>
+                <div class="dash-row__value">$196k</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent proposals + templates -->
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="dash-card h-100" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Recent Proposals</h2>
+                  <div class="dash-card__sub">Sent in the last 30 days</div>
+                </div>
+                <a href="404.html" class="dash-card__link">Proposal library <i class="bi bi-arrow-right"></i></a>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Proposal</th>
+                      <th>Value</th>
+                      <th>Sent</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="cell-user"><span class="cell-user__avatar">AB</span><div class="cell-user__meta"><div class="cell-user__name">Q4 Paid Media Plan</div></div></div></td>
+                      <td><span class="money">$48k</span></td>
+                      <td>Sep 22</td>
+                      <td><span class="b-chip b-chip--mustard">Awaiting signature</span></td>
+                      <td><a href="404.html" class="dash-card__link">View</a></td>
+                    </tr>
+                    <tr>
+                      <td><div class="cell-user"><span class="cell-user__avatar">NC</span><div class="cell-user__meta"><div class="cell-user__name">Content Hub Build</div></div></div></td>
+                      <td><span class="money">$18k</span></td>
+                      <td>Sep 15</td>
+                      <td><span class="b-chip b-chip--green">Accepted</span></td>
+                      <td><a href="404.html" class="dash-card__link">View</a></td>
+                    </tr>
+                    <tr>
+                      <td><div class="cell-user"><span class="cell-user__avatar">FF</span><div class="cell-user__meta"><div class="cell-user__name">Video Production Series</div></div></div></td>
+                      <td><span class="money">$9.5k</span></td>
+                      <td>Sep 10</td>
+                      <td><span class="b-chip b-chip--red">Declined</span></td>
+                      <td><a href="404.html" class="dash-card__link">View</a></td>
+                    </tr>
+                    <tr>
+                      <td><div class="cell-user"><span class="cell-user__avatar">BS</span><div class="cell-user__meta"><div class="cell-user__name">LinkedIn ABM Program</div></div></div></td>
+                      <td><span class="money">$20k</span></td>
+                      <td>Sep 06</td>
+                      <td><span class="b-chip b-chip--green">Accepted</span></td>
+                      <td><a href="404.html" class="dash-card__link">View</a></td>
+                    </tr>
+                    <tr>
+                      <td><div class="cell-user"><span class="cell-user__avatar">MH</span><div class="cell-user__meta"><div class="cell-user__name">Local SEO Pilot</div></div></div></td>
+                      <td><span class="money">$6.8k</span></td>
+                      <td>Sep 02</td>
+                      <td><span class="b-chip b-chip--grey">Draft</span></td>
+                      <td><a href="404.html" class="dash-card__link">Edit</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="dash-card" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Template Library</h2>
+                  <div class="dash-card__sub">Reusable proposal starters</div>
+                </div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(199,197,74,0.14);color:#d8d45a;"><i class="bi bi-megaphone"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Paid Media Retainer</div>
+                  <div class="dash-row__sub">v6 · used 14 times</div>
+                </div>
+                <div class="dash-row__right"><a href="404.html" class="dash-card__link">Use</a></div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(199,197,74,0.14);color:#d8d45a;"><i class="bi bi-search"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">SEO Audit</div>
+                  <div class="dash-row__sub">v3 · used 9 times</div>
+                </div>
+                <div class="dash-row__right"><a href="404.html" class="dash-card__link">Use</a></div>
+              </div>
+              <div class="dash-row" style="border-bottom:none;">
+                <span class="dash-av" style="background:rgba(199,197,74,0.14);color:#d8d45a;"><i class="bi bi-layout-text-window"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Landing Page Sprint</div>
+                  <div class="dash-row__sub">v2 · used 7 times</div>
+                </div>
+                <div class="dash-row__right"><a href="404.html" class="dash-card__link">Use</a></div>
+              </div>
+            </div>
+            <div class="dash-note mt-4" data-reveal>
+              <i class="bi bi-calendar-check"></i>
+              <span>Weekly pipeline review, Fridays 10 AM. See you there.</span>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

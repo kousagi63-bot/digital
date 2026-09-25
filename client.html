@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly Digital Client Portal — track your campaigns, reports, files and billing in one place." />
+  <title>Client Portal — Northwind Co.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body style="background:#050505;">
+
+  <div class="dash-shell" id="dashShell">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="dash-sidebar" aria-label="Client navigation">
+      <div class="dash-sidebar__head">
+        <a class="dash-sidebar__brand" href="index.html">
+          <img src="images/logo.webp" alt="Stackly Digital" class="dash-sidebar__logo" />
+        </a>
+        <button class="dash-sidebar__close" type="button" aria-label="Close navigation"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="dash-sidebar__role">Client Portal</div>
+
+      <ul class="dash-nav">
+        <li class="dash-nav__group">Main</li>
+        <li><a class="dash-nav__link is-active" href="client.html"><i class="bi bi-grid-1x2"></i> Overview</a></li>
+        <li><a class="dash-nav__link" href="client-campaigns.html"><i class="bi bi-megaphone"></i> Campaigns</a></li>
+        <li><a class="dash-nav__link" href="client-reports.html"><i class="bi bi-graph-up"></i> Reports</a></li>
+        <li><a class="dash-nav__link" href="client-files.html"><i class="bi bi-folder2-open"></i> Files</a></li>
+        <li><a class="dash-nav__link" href="client-messages.html"><i class="bi bi-chat-dots"></i> Messages <span class="dash-nav__badge">3</span></a></li>
+        <li><a class="dash-nav__link" href="client-billing.html"><i class="bi bi-receipt"></i> Billing</a></li>
+
+        <li class="dash-nav__group">Growth</li>
+        <li><a class="dash-nav__link" href="client-roadmap.html"><i class="bi bi-signpost-split"></i> Growth Roadmap</a></li>
+        <li><a class="dash-nav__link" href="client-goals.html"><i class="bi bi-bullseye"></i> KPI Scorecard</a></li>
+        <li><a class="dash-nav__link" href="client-calendar.html"><i class="bi bi-calendar3"></i> Transformation Calendar</a></li>
+
+        <li class="dash-nav__group">Account</li>
+        <li><a class="dash-nav__link" href="client-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+        <li><a class="dash-nav__link" href="client-support.html"><i class="bi bi-life-preserver"></i> Support</a></li>
+      </ul>
+
+      <div class="dash-sidebar__foot">
+        <div class="dash-user">
+          <span class="dash-user__avatar">AC</span>
+          <div class="dash-user__meta">
+            <div class="dash-user__name">Alex Chen</div>
+            <div class="dash-user__plan">Northwind Co. · Growth</div>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-outline-light btn-sm w-100" data-signout><i class="bi bi-box-arrow-right me-1"></i> Sign Out</a>
+        <a href="index.html" class="btn btn-outline-light btn-sm w-100"><i class="bi bi-box-arrow-right me-1"></i> Back to site</a>
+      </div>
+    </aside>
+
+    <div class="dash-backdrop" aria-hidden="true"></div>
+
+    <!-- ========== MAIN ========== -->
+    <div class="dash-main">
+      <header class="dash-topbar">
+        <button class="dash-topbar__hamburger" type="button" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+        <div class="dash-topbar__title">Client Portal</div>
+
+        <div class="dash-icons">
+
+          <div class="dash-profile">
+            <span class="dash-profile__avatar">A</span>
+            <span class="dash-profile__info">
+              <span class="dash-profile__name">Alex Chen</span>
+              <span class="dash-profile__email">alex@northwind.co</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <main class="dash-content">
+
+        <!-- Welcome banner -->
+        <section class="dash-welcome" data-reveal="fade">
+          <h1>Welcome back, Alex.</h1>
+          <p>Your Q3 growth programme is <strong style="color:#d8d45a;">112% of target</strong> — up 18.2% against last quarter. Two creatives are waiting on your approval.</p>
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <a href="404.html" class="btn btn-gradient btn-sm"><i class="bi bi-megaphone me-1"></i> View Campaigns</a>
+            <a href="404.html" class="btn btn-outline-light btn-sm"><i class="bi bi-file-earmark-arrow-down me-1"></i> Download Report</a>
+          </div>
+        </section>
+
+        <!-- Stats -->
+        <div class="dash-stats">
+          <div class="dash-stat dash-stat--grad" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Impressions</span>
+              <span class="dash-stat__icon"><i class="bi bi-eye"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="2.4" data-suffix="M">0</div>
+            <div class="dash-stat__delta"><span class="up"><i class="bi bi-arrow-up-right"></i> 9.1%</span> vs last month</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Clicks</span>
+              <span class="dash-stat__icon"><i class="bi bi-cursor"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="48.2" data-suffix="K">0</div>
+            <div class="dash-stat__delta"><span class="up"><i class="bi bi-arrow-up-right"></i> 14.6%</span> vs last month</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Conversions</span>
+              <span class="dash-stat__icon"><i class="bi bi-check2-circle"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="3.9" data-suffix="K">0</div>
+            <div class="dash-stat__delta"><span class="down"><i class="bi bi-arrow-down-right"></i> 1.2%</span> vs last month</div>
+          </div>
+          <div class="dash-stat" data-reveal>
+            <div class="dash-stat__top">
+              <span class="dash-stat__label">Ad Spend</span>
+              <span class="dash-stat__icon"><i class="bi bi-coin"></i></span>
+            </div>
+            <div class="dash-stat__value dash-count" data-count="12400" data-format="money">$0</div>
+            <div class="dash-stat__delta"><span class="up"><i class="bi bi-arrow-up-right"></i> +$1.1k</span> this month</div>
+          </div>
+        </div>
+
+        <!-- Performance + pacing -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-8">
+            <div class="dash-card h-100" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Performance — Last 6 Months</h2>
+                  <div class="dash-card__sub">Clicks and conversions by week</div>
+                </div>
+                <a href="404.html" class="dash-card__link">Full report <i class="bi bi-arrow-up-right"></i></a>
+              </div>
+              <div class="chart-box">
+                <div data-chart="line"
+                     data-values="31,38,35,47,52,49,61,58,66,71,69,78"
+                     data-labels="Apr 1,Apr 15,May 1,May 15,Jun 1,Jun 15,Jul 1,Jul 15,Aug 1,Aug 15,Sep 1,Sep 15"></div>
+              </div>
+              <div class="chart-legend">
+                <span class="chart-legend__item"><span class="chart-legend__swatch" style="background:#c7c54a;"></span> Weekly clicks (hundreds)</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="dash-card h-100" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Campaign Pacing</h2>
+                  <div class="dash-card__sub">Where Q3 budgets stand</div>
+                </div>
+              </div>
+              <div class="d-flex flex-column gap-4 pt-2">
+                <div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span style="font-size:.85rem;color:#d6d6d6;">Revenue vs target</span>
+                    <span style="font-size:.85rem;color:#d8d45a;font-weight:600;">112%</span>
+                  </div>
+                  <div class="dash-progress" data-value="112"><div class="dash-progress__bar"></div></div>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span style="font-size:.85rem;color:#d6d6d6;">Budget used</span>
+                    <span style="font-size:.85rem;color:#fff;font-weight:600;">62%</span>
+                  </div>
+                  <div class="dash-progress" data-value="62"><div class="dash-progress__bar dash-progress__bar--flat"></div></div>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span style="font-size:.85rem;color:#d6d6d6;">Click-through rate</span>
+                    <span style="font-size:.85rem;color:#fff;font-weight:600;">2.1%</span>
+                  </div>
+                  <div class="dash-progress" data-value="70"><div class="dash-progress__bar"></div></div>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span style="font-size:.85rem;color:#d6d6d6;">Landing-page conversion</span>
+                    <span style="font-size:.85rem;color:#fff;font-weight:600;">4.7%</span>
+                  </div>
+                  <div class="dash-progress" data-value="78"><div class="dash-progress__bar dash-progress__bar--flat"></div></div>
+                </div>
+              </div>
+              <div class="dash-note mt-4">
+                <i class="bi bi-lightning-charge"></i>
+                At this pace you'll finish October with ~$8.2k of budget unspent. We can reallocate to winning campaigns.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active campaigns + billing -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-8">
+            <div class="dash-card h-100" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Active Campaigns</h2>
+                  <div class="dash-card__sub">Current channels and spending</div>
+                </div>
+                <a href="404.html" class="dash-card__link">All campaigns <i class="bi bi-arrow-up-right"></i></a>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Campaign</th>
+                      <th>Channel</th>
+                      <th>Status</th>
+                      <th>Budget used</th>
+                      <th>Spend</th>
+                      <th>ROAS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Q3 Growth Sprint</td>
+                      <td>Google Ads</td>
+                      <td><span class="b-chip b-chip--green">Active</span></td>
+                      <td style="min-width:120px;"><div class="dash-progress" data-value="58"><div class="dash-progress__bar"></div></div></td>
+                      <td class="money">$3.9k</td>
+                      <td class="money">5.2×</td>
+                    </tr>
+                    <tr>
+                      <td>Brand Search</td>
+                      <td>Google Ads</td>
+                      <td><span class="b-chip b-chip--green">Active</span></td>
+                      <td style="min-width:120px;"><div class="dash-progress" data-value="71"><div class="dash-progress__bar dash-progress__bar--flat"></div></div></td>
+                      <td class="money">$1.8k</td>
+                      <td class="money">4.6×</td>
+                    </tr>
+                    <tr>
+                      <td>Demand Capture</td>
+                      <td>Meta Ads</td>
+                      <td><span class="b-chip b-chip--green">Active</span></td>
+                      <td style="min-width:120px;"><div class="dash-progress" data-value="64"><div class="dash-progress__bar"></div></div></td>
+                      <td class="money">$4.2k</td>
+                      <td class="money">3.8×</td>
+                    </tr>
+                    <tr>
+                      <td>Retargeting</td>
+                      <td>Meta Ads</td>
+                      <td><span class="b-chip b-chip--mustard">In review</span></td>
+                      <td style="min-width:120px;"><div class="dash-progress" data-value="40"><div class="dash-progress__bar dash-progress__bar--flat"></div></div></td>
+                      <td class="money">$1.4k</td>
+                      <td class="money">4.1×</td>
+                    </tr>
+                    <tr>
+                      <td>Email Nurture</td>
+                      <td>Klaviyo</td>
+                      <td><span class="b-chip b-chip--grey">Paused</span></td>
+                      <td style="min-width:120px;"><div class="dash-progress" data-value="82"><div class="dash-progress__bar"></div></div></td>
+                      <td class="money">$1.1k</td>
+                      <td class="money">3.2×</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex flex-column gap-4">
+            <div class="dash-card" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Next Invoice</h2>
+                  <div class="dash-card__sub">September retainer</div>
+                </div>
+                <span class="b-chip b-chip--mustard">Due soon</span>
+              </div>
+              <div class="dash-bill">
+                <div class="dash-bill__left">
+                  <div>
+                    <div class="dash-bill__name">INV-2031</div>
+                    <div style="font-size:.76rem;color:#8f8f8f;">Growth plan · Sep 1–30</div>
+                  </div>
+                </div>
+                <div class="money" style="font-size:1.15rem;">$6,500</div>
+              </div>
+              <div style="font-size:.82rem;color:#9a9a9a;" class="mb-3">Due <strong style="color:#fff;">Oct 5</strong> · auto-pay on file</div>
+              <div class="d-flex gap-2">
+                <a href="404.html" class="btn btn-gradient btn-sm flex-grow-1"><i class="bi bi-download me-1"></i> PDF</a>
+                <a href="404.html" class="btn btn-outline-light btn-sm flex-grow-1"><i class="bi bi-credit-card me-1"></i> Pay</a>
+              </div>
+            </div>
+
+            <div class="dash-card flex-grow-1" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Pending Approvals</h2>
+                  <div class="dash-card__sub">Needs your sign-off</div>
+                </div>
+                <span class="b-chip b-chip--olive">2 items</span>
+              </div>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(199,197,74,.15);color:#d8d45a;border:1px solid rgba(199,197,74,.4);"><i class="bi bi-image"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Q4 creative set — v2</div>
+                  <div class="dash-row__sub">4 images · 2 videos</div>
+                </div>
+                <div class="dash-row__right"><a href="404.html" class="dash-card__link">Approve</a></div>
+              </div>
+              <div class="dash-row">
+                <span class="dash-av" style="background:rgba(199,197,74,.15);color:#d8d45a;border:1px solid rgba(199,197,74,.4);"><i class="bi bi-pencil-square"></i></span>
+                <div class="dash-row__main">
+                  <div class="dash-row__title">Landing page copy — 2.0</div>
+                  <div class="dash-row__sub">Ready for final review</div>
+                </div>
+                <div class="dash-row__right"><a href="404.html" class="dash-card__link">Review</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Messages + files -->
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="dash-card h-100 d-flex flex-column" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Recent Messages</h2>
+                  <div class="dash-card__sub">From your account manager</div>
+                </div>
+                <a href="404.html" class="dash-card__link">Open inbox</a>
+              </div>
+              <div class="flex-grow-1">
+                <div class="dash-msg">
+                  <span class="dash-user__avatar" style="width:38px;height:38px;">SC</span>
+                  <div class="dash-row__main">
+                    <div class="dash-row__title">Sam Carter · Account Manager</div>
+                    <div class="dash-row__sub">We reallocated $1.5k from Email Nurture to Demand Capture — worth a look at the pacing above.</div>
+                  </div>
+                  <div class="dash-msg__time">2h</div>
+                </div>
+                <div class="dash-msg">
+                  <span class="dash-user__avatar" style="width:38px;height:38px;">SC</span>
+                  <div class="dash-row__main">
+                    <div class="dash-row__title">Sam Carter · Account Manager</div>
+                    <div class="dash-row__sub">Q4 creative set is ready for your review — two new ad variants outperforming the control by 31%.</div>
+                  </div>
+                  <div class="dash-msg__time">1d</div>
+                </div>
+                <div class="dash-msg">
+                  <span class="dash-user__avatar" style="width:38px;height:38px;">SC</span>
+                  <div class="dash-row__main">
+                    <div class="dash-row__title">Sam Carter · Account Manager</div>
+                    <div class="dash-row__sub">August report is live in Reports. Short version: back-to-back record months. 🎉</div>
+                  </div>
+                  <div class="dash-msg__time">3d</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="dash-card h-100 d-flex flex-column" data-reveal>
+              <div class="dash-card__head">
+                <div>
+                  <h2 class="dash-card__title">Files &amp; Deliverables</h2>
+                  <div class="dash-card__sub">Latest documents shared with you</div>
+                </div>
+                <a href="404.html" class="dash-card__link">All files</a>
+              </div>
+              <div class="flex-grow-1">
+                <div class="dash-file">
+                  <span class="dash-file__icon"><i class="bi bi-file-earmark-pdf"></i></span>
+                  <div class="dash-file__meta">
+                    <div class="dash-file__name">Q3 Performance Report (August).pdf</div>
+                    <div class="dash-file__sub">PDF · 2.4 MB · Sep 15</div>
+                  </div>
+                  <a href="404.html" class="dash-iconbtn"><i class="bi bi-download"></i></a>
+                </div>
+                <div class="dash-file">
+                  <span class="dash-file__icon"><i class="bi bi-file-earmark-ppt"></i></span>
+                  <div class="dash-file__meta">
+                    <div class="dash-file__name">Q4 Growth Roadmap Deck.pptx</div>
+                    <div class="dash-file__sub">PPTX · 18.1 MB · Sep 22</div>
+                  </div>
+                  <a href="404.html" class="dash-iconbtn"><i class="bi bi-download"></i></a>
+                </div>
+                <div class="dash-file">
+                  <span class="dash-file__icon"><i class="bi bi-images"></i></span>
+                  <div class="dash-file__meta">
+                    <div class="dash-file__name">Q4 Creative Set — Approved.zip</div>
+                    <div class="dash-file__sub">ZIP · 42.6 MB · Sep 20</div>
+                  </div>
+                  <a href="404.html" class="dash-iconbtn"><i class="bi bi-download"></i></a>
+                </div>
+                <div class="dash-file">
+                  <span class="dash-file__icon"><i class="bi bi-file-earmark-spreadsheet"></i></span>
+                  <div class="dash-file__meta">
+                    <div class="dash-file__name">Keyword Rankings — Organic.xlsx</div>
+                    <div class="dash-file__sub">XLSX · 890 KB · Sep 12</div>
+                  </div>
+                  <a href="404.html" class="dash-iconbtn"><i class="bi bi-download"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>
