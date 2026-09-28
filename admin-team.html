@@ -15,15 +15,26 @@
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/dashboard.css" />
+  <script>try{if(sessionStorage.getItem('sd-page-transition'))document.documentElement.classList.add('nav-pending');}catch(e){}</script>
 </head>
 <body style="background:#050505;">
+  <!-- Preloader curtain: first child of <body> so it renders in the very first paint -->
+  <div class="page-transition page-preboot" id="pagePreboot" role="status" aria-live="polite" aria-label="Loading page">
+    <div class="page-transition__inner">
+      <div class="page-transition__mark"><span>SD</span></div>
+      <div class="page-transition__brand">Stackly <span>Digital</span></div>
+      <p class="page-transition__label">Preparing your next chapter</p>
+      <div class="page-transition__bar" aria-hidden="true"></div>
+      <div class="page-transition__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </div>
 
   <div class="dash-shell">
 
     <!-- ========== SIDEBAR ========== -->
     <aside class="dash-sidebar" aria-label="Admin navigation">
       <div class="dash-sidebar__head">
-        <a class="dash-sidebar__brand" href="index.html">
+        <a class="dash-sidebar__brand" href="admin-team.html">
           <img src="images/logo.webp" alt="Stackly Digital" class="dash-sidebar__logo" />
         </a>
         <button class="dash-sidebar__close" type="button" aria-label="Close navigation"><i class="bi bi-x-lg"></i></button>
@@ -137,7 +148,10 @@
             <div class="dash-card d-flex align-items-start gap-3" data-reveal>
               <span class="dash-user__avatar" style="width:46px;height:46px;">MR</span>
               <div class="flex-grow-1 min-w-0">
-                <div class="dash-row__title">Maya Rivera</div>
+                <div class="dash-member__head">
+                  <div class="dash-row__title">Maya Rivera</div>
+                  <span class="b-chip b-chip--green">Available</span>
+                </div>
                 <div class="dash-row__sub">Director of Growth · <a href="404.html" style="color:#8f8f8f;">maya@stacklydigital.com</a></div>
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
                   <span style="font-size:.74rem;color:#9a9a9a;">Workload · 12 accounts</span>
@@ -145,14 +159,16 @@
                 </div>
                 <div class="dash-progress" data-value="64"><div class="dash-progress__bar"></div></div>
               </div>
-              <span class="b-chip b-chip--green">Available</span>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
             <div class="dash-card d-flex align-items-start gap-3" data-reveal>
               <span class="dash-user__avatar" style="width:46px;height:46px;">SC</span>
               <div class="flex-grow-1 min-w-0">
-                <div class="dash-row__title">Sam Carter</div>
+                <div class="dash-member__head">
+                  <div class="dash-row__title">Sam Carter</div>
+                  <span class="b-chip b-chip--mustard">Busy</span>
+                </div>
                 <div class="dash-row__sub">Account Manager · <a href="404.html" style="color:#8f8f8f;">sam@stacklydigital.com</a></div>
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
                   <span style="font-size:.74rem;color:#9a9a9a;">Workload · 18 accounts</span>
@@ -160,14 +176,16 @@
                 </div>
                 <div class="dash-progress" data-value="88"><div class="dash-progress__bar dash-progress__bar--flat"></div></div>
               </div>
-              <span class="b-chip b-chip--mustard">Busy</span>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
             <div class="dash-card d-flex align-items-start gap-3" data-reveal>
               <span class="dash-user__avatar" style="width:46px;height:46px;">DK</span>
               <div class="flex-grow-1 min-w-0">
-                <div class="dash-row__title">Dana Kim</div>
+                <div class="dash-member__head">
+                  <div class="dash-row__title">Dana Kim</div>
+                  <span class="b-chip b-chip--green">Available</span>
+                </div>
                 <div class="dash-row__sub">Paid Media Lead · <a href="404.html" style="color:#8f8f8f;">dana@stacklydigital.com</a></div>
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
                   <span style="font-size:.74rem;color:#9a9a9a;">Workload · 15 accounts</span>
@@ -175,14 +193,16 @@
                 </div>
                 <div class="dash-progress" data-value="76"><div class="dash-progress__bar"></div></div>
               </div>
-              <span class="b-chip b-chip--green">Available</span>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
             <div class="dash-card d-flex align-items-start gap-3" data-reveal>
               <span class="dash-user__avatar" style="width:46px;height:46px;">LT</span>
               <div class="flex-grow-1 min-w-0">
-                <div class="dash-row__title">Leo Tran</div>
+                <div class="dash-member__head">
+                  <div class="dash-row__title">Leo Tran</div>
+                  <span class="b-chip b-chip--green">Available</span>
+                </div>
                 <div class="dash-row__sub">SEO Strategist · <a href="404.html" style="color:#8f8f8f;">leo@stacklydigital.com</a></div>
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
                   <span style="font-size:.74rem;color:#9a9a9a;">Workload · 11 accounts</span>
@@ -190,14 +210,16 @@
                 </div>
                 <div class="dash-progress" data-value="58"><div class="dash-progress__bar dash-progress__bar--flat"></div></div>
               </div>
-              <span class="b-chip b-chip--green">Available</span>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
             <div class="dash-card d-flex align-items-start gap-3" data-reveal>
               <span class="dash-user__avatar" style="width:46px;height:46px;">NP</span>
               <div class="flex-grow-1 min-w-0">
-                <div class="dash-row__title">Nia Patel</div>
+                <div class="dash-member__head">
+                  <div class="dash-row__title">Nia Patel</div>
+                  <span class="b-chip b-chip--green">Available</span>
+                </div>
                 <div class="dash-row__sub">Content Director · <a href="404.html" style="color:#8f8f8f;">nia@stacklydigital.com</a></div>
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
                   <span style="font-size:.74rem;color:#9a9a9a;">Workload · 9 accounts</span>
@@ -205,14 +227,16 @@
                 </div>
                 <div class="dash-progress" data-value="71"><div class="dash-progress__bar"></div></div>
               </div>
-              <span class="b-chip b-chip--green">Available</span>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
             <div class="dash-card d-flex align-items-start gap-3" data-reveal>
               <span class="dash-user__avatar" style="width:46px;height:46px;">JW</span>
               <div class="flex-grow-1 min-w-0">
-                <div class="dash-row__title">Jordan Wells</div>
+                <div class="dash-member__head">
+                  <div class="dash-row__title">Jordan Wells</div>
+                  <span class="b-chip b-chip--green">Available</span>
+                </div>
                 <div class="dash-row__sub">Brand Designer · <a href="404.html" style="color:#8f8f8f;">jordan@stacklydigital.com</a></div>
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
                   <span style="font-size:.74rem;color:#9a9a9a;">Workload · 7 accounts</span>
@@ -220,7 +244,6 @@
                 </div>
                 <div class="dash-progress" data-value="44"><div class="dash-progress__bar dash-progress__bar--flat"></div></div>
               </div>
-              <span class="b-chip b-chip--green">Available</span>
             </div>
           </div>
         </div>

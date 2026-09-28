@@ -18,15 +18,26 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/dashboard.css" />
+  <script>try{if(sessionStorage.getItem('sd-page-transition'))document.documentElement.classList.add('nav-pending');}catch(e){}</script>
 </head>
 <body style="background:#050505;">
+  <!-- Preloader curtain: first child of <body> so it renders in the very first paint -->
+  <div class="page-transition page-preboot" id="pagePreboot" role="status" aria-live="polite" aria-label="Loading page">
+    <div class="page-transition__inner">
+      <div class="page-transition__mark"><span>SD</span></div>
+      <div class="page-transition__brand">Stackly <span>Digital</span></div>
+      <p class="page-transition__label">Preparing your next chapter</p>
+      <div class="page-transition__bar" aria-hidden="true"></div>
+      <div class="page-transition__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </div>
 
   <div class="dash-shell" id="dashShell">
 
     <!-- ========== SIDEBAR ========== -->
     <aside class="dash-sidebar" aria-label="Client navigation">
       <div class="dash-sidebar__head">
-        <a class="dash-sidebar__brand" href="index.html">
+        <a class="dash-sidebar__brand" href="client.html">
           <img src="images/logo.webp" alt="Stackly Digital" class="dash-sidebar__logo" />
         </a>
         <button class="dash-sidebar__close" type="button" aria-label="Close navigation"><i class="bi bi-x-lg"></i></button>

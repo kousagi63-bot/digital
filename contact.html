@@ -17,8 +17,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <script>try{if(sessionStorage.getItem('sd-page-transition'))document.documentElement.classList.add('nav-pending');}catch(e){}</script>
 </head>
 <body>
+  <!-- Preloader curtain: first child of <body> so it renders in the very first paint -->
+  <div class="page-transition page-preboot" id="pagePreboot" role="status" aria-live="polite" aria-label="Loading page">
+    <div class="page-transition__inner">
+      <div class="page-transition__mark"><span>SD</span></div>
+      <div class="page-transition__brand">Stackly <span>Digital</span></div>
+      <p class="page-transition__label">Preparing your next chapter</p>
+      <div class="page-transition__bar" aria-hidden="true"></div>
+      <div class="page-transition__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </div>
 
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar navbar-expand-lg fixed-top site-nav" id="siteNav">
@@ -28,7 +39,7 @@
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-controls="navMenu" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="bi bi-list"></i>
       </button>
 
       <div class="offcanvas offcanvas-end nav-offcanvas" tabindex="-1" id="navMenu" aria-labelledby="navMenuLabel">
@@ -201,7 +212,7 @@
               <div class="team-card__social">
                 <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 <a href="404.html" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="mailto:hello@stacklydigital.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                <a href="404.html" aria-label="Email"><i class="bi bi-envelope"></i></a>
               </div>
             </div>
             <div class="team-card__body">
@@ -218,7 +229,7 @@
               <div class="team-card__social">
                 <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 <a href="404.html" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="mailto:hello@stacklydigital.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                <a href="404.html" aria-label="Email"><i class="bi bi-envelope"></i></a>
               </div>
             </div>
             <div class="team-card__body">
@@ -235,7 +246,7 @@
               <div class="team-card__social">
                 <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 <a href="404.html" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="mailto:hello@stacklydigital.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                <a href="404.html" aria-label="Email"><i class="bi bi-envelope"></i></a>
               </div>
             </div>
             <div class="team-card__body">
@@ -252,7 +263,7 @@
               <div class="team-card__social">
                 <a href="404.html" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 <a href="404.html" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="mailto:hello@stacklydigital.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                <a href="404.html" aria-label="Email"><i class="bi bi-envelope"></i></a>
               </div>
             </div>
             <div class="team-card__body">

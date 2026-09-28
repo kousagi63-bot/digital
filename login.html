@@ -18,8 +18,19 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/auth.css" />
+  <script>try{if(sessionStorage.getItem('sd-page-transition'))document.documentElement.classList.add('nav-pending');}catch(e){}</script>
 </head>
 <body>
+  <!-- Preloader curtain: first child of <body> so it renders in the very first paint -->
+  <div class="page-transition page-preboot" id="pagePreboot" role="status" aria-live="polite" aria-label="Loading page">
+    <div class="page-transition__inner">
+      <div class="page-transition__mark"><span>SD</span></div>
+      <div class="page-transition__brand">Stackly <span>Digital</span></div>
+      <p class="page-transition__label">Preparing your next chapter</p>
+      <div class="page-transition__bar" aria-hidden="true"></div>
+      <div class="page-transition__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </div>
 
   <main class="auth">
     <div class="auth__glow auth__glow--1"></div>
@@ -81,7 +92,7 @@
               <i class="bi bi-lock auth-input__icon"></i>
               <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Enter your password" autocomplete="current-password" />
               <button type="button" class="auth-input__btn" data-toggle-password data-target="#loginPassword" aria-label="Show password">
-                <i class="bi bi-eye"></i>
+                <i class="bi bi-eye-slash"></i>
               </button>
             </div>
             <div class="invalid-feedback">Password is required.</div>
@@ -93,7 +104,6 @@
               <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
             <a class="auth-link" href="404.html">Forgot password?</a>
-            <div class="invalid-feedback" id="rememberMeError">You must select Remember Me to log in.</div>
           </div>
 
           <button type="submit" class="btn btn-gradient auth-submit">
