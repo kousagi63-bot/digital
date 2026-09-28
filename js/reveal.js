@@ -86,3 +86,223 @@
     elements.forEach(function (el) { el.classList.add('is-revealed'); });
   });
 })();
+
+(function () {
+  'use strict';
+
+  var STORAGE_KEY = 'sd-page-transition';
+  var NAV_SELECTOR = '#siteNav a[href], .dash-sidebar a[href], .error-hero a[href], .auth-card__logo[href]';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var overlay = null;
+  var isNavigating = false;
+  var revealFallback = null;
+
+  function readFlag() {
+    try {
+      return window.sessionStorage.getItem(STORAGE_KEY);
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function writeFlag() {
+    try {
+      window.sessionStorage.setItem(STORAGE_KEY, '1');
+    } catch (err) {
+      return;
+    }
+  }
+
+  function clearFlag() {
+    try {
+      window.sessionStorage.removeItem(STORAGE_KEY);
+    } catch (err) {
+      return;
+    }
+  }
+
+  function createOverlay(state) {
+    if (overlay) return overlay;
+    if (!document.body) return null;
+
+    var resume = state === 'resume';
+
+    var node = document.createElement('div');
+    node.className = resume ? 'page-transition is-resumed' : 'page-transition';
+    node.setAttribute('role', 'status');
+    node.setAttribute('aria-live', 'polite');
+    node.setAttribute('aria-label', 'Loading the next page');
+    node.innerHTML = [
+      '<div class="page-transition__inner">',
+      '<div class="page-transition__mark"><span>SD</span></div>',
+      '<div class="page-transition__brand">Stackly <span>Digital</span></div>',
+      '<p class="page-transition__label">Preparing your next chapter</p>',
+      '<div class="page-transition__bar" aria-hidden="true"></div>',
+      '<div class="page-transition__dots" aria-hidden="true"><i></i><i></i><i></i></div>',
+      '</div>',
+    ].join('');
+
+    document.body.appendChild(node);
+    overlay = node;
+
+    if (resume) {
+      /* Destination page: the outgoing document's overlay is still on screen,
+         so this is the same curtain continuing across the navigation. Show it
+         already settled — no fade-in, no scroll lock — otherwise it reads as a
+         second preloader flashing on top of the first. */
+      node.classList.add('is-visible');
+      return node;
+    }
+
+    document.documentElement.classList.add('page-transition-active');
+    var show = function () { node.classList.add('is-visible'); };
+    if (window.requestAnimationFrame) {
+      window.requestAnimationFrame(show);
+    } else {
+      window.setTimeout(show, 0);
+    }
+    return node;
+  }
+
+  function hideOverlay() {
+    if (!overlay) return;
+    var node = overlay;
+    /* The pre-painted curtain (.page-preboot) and a resumed overlay both use
+       the short 220ms lift, so they are removed on the same beat. */
+    var quick = node.classList.contains('is-resumed') || node.classList.contains('page-preboot');
+    node.classList.add('is-leaving');
+    document.documentElement.classList.remove('page-transition-active');
+    window.setTimeout(function () {
+      /* nav-pending has to survive the fade: dropping it would fall back to
+         .page-preboot { display: none } and cut the lift short. */
+      document.documentElement.classList.remove('nav-pending');
+      if (node.parentNode) node.parentNode.removeChild(node);
+      if (overlay === node) overlay = null;
+    }, reduceMotion.matches ? 0 : (quick ? 240 : 460));
+  }
+
+  function startNavigation(url) {
+    if (isNavigating) return;
+    isNavigating = true;
+    writeFlag();
+    createOverlay();
+    window.setTimeout(function () {
+      window.location.assign(url);
+    }, reduceMotion.matches ? 0 : 680);
+  }
+
+  function onNavigationClick(event) {
+    if (event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    var target = event.target;
+    if (!target || typeof target.closest !== 'function') return;
+    var link = target.closest(NAV_SELECTOR);
+    if (!link || link.getAttribute('data-no-transition') !== null) return;
+    if (link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
+
+    var href = link.getAttribute('href');
+    if (!href || href.charAt(0) === '#') return;
+
+    var url;
+    try {
+      url = new URL(link.href, document.baseURI);
+    } catch (err) {
+      return;
+    }
+
+    if (url.protocol !== 'http:' && url.protocol !== 'https:' && url.protocol !== 'file:') return;
+    if (url.origin !== window.location.origin || url.hash || url.href === window.location.href) return;
+
+    event.preventDefault();
+    startNavigation(url.href);
+  }
+
+  function onBackClick(event) {
+    if (event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    var target = event.target;
+    if (!target || typeof target.closest !== 'function') return;
+    var button = target.closest('.error-hero button[aria-label="Go back to the previous page"]');
+    if (!button || reduceMotion.matches) return;
+    if (isNavigating) {
+      event.preventDefault();
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    isNavigating = true;
+    writeFlag();
+    createOverlay();
+    window.setTimeout(function () {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.assign('index.html');
+      }
+    }, 680);
+  }
+
+  function claimPreboot() {
+    var node = document.getElementById('pagePreboot');
+    if (!node) return false;
+    overlay = node;
+    return true;
+  }
+
+  function revealDestination() {
+    if (!readFlag() || reduceMotion.matches) {
+      clearFlag();
+      /* Reduced motion never shows the curtain, so make sure the class the
+         head script set cannot leave the pre-painted node covering the page. */
+      document.documentElement.classList.remove('nav-pending');
+      return;
+    }
+
+    isNavigating = false;
+    if (!claimPreboot()) createOverlay('resume');
+
+    var completed = false;
+    var complete = function () {
+      if (completed) return;
+      completed = true;
+      if (revealFallback) {
+        window.clearTimeout(revealFallback);
+        revealFallback = null;
+      }
+      clearFlag();
+      hideOverlay();
+    };
+
+    /* Wait for the page to be ready, but never keep the curtain up over a
+       fully rendered document — a slow `load` (fonts, the hero video) must not
+       stall the hand-off. Two frames so the new paint lands before we lift. */
+    var lift = function () {
+      var next = function () { window.setTimeout(complete, 40); };
+      if (window.requestAnimationFrame) {
+        window.requestAnimationFrame(function () { window.requestAnimationFrame(next); });
+      } else {
+        window.setTimeout(next, 0);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      lift();
+    } else {
+      window.addEventListener('load', lift, { once: true });
+    }
+    revealFallback = window.setTimeout(complete, 700);
+  }
+
+  document.addEventListener('click', onNavigationClick);
+  document.addEventListener('click', onBackClick, true);
+  window.addEventListener('pageshow', function (event) {
+    if (!event.persisted) return;
+    clearFlag();
+    isNavigating = false;
+    hideOverlay();
+  });
+
+  revealDestination();
+})();

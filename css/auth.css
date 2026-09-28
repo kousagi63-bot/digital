@@ -361,6 +361,21 @@
   padding-right: 46px;
 }
 
+/* Hide the browser's built-in password reveal (eye) button on password
+   fields — the custom .auth-input__btn toggle is used instead. */
+.auth-input input[type="password"]::-webkit-credentials-auto-fill-button,
+.auth-input input[type="password"]::-webkit-credentials-auto-fill-button:hover,
+.auth-input input[type="password"]::-webkit-credentials-auto-fill-button:active,
+.auth-input input[type="password"]::-webkit-contacts-auto-fill-button,
+.auth-input input[type="password"]::-webkit-inner-spin-button,
+.auth-input input[type="password"]::-ms-reveal,
+.auth-input input[type="password"]::-ms-clear {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  display: none !important;
+  pointer-events: none !important;
+}
+
 .invalid-feedback {
   font-size: 0.8rem;
   color: #ff7a7a;
@@ -512,14 +527,6 @@
 }
 .auth-options .form-check-input:focus {
   box-shadow: 0 0 0 3px rgba(199, 197, 74, 0.18);
-}
-.auth-options.is-invalid .form-check-input {
-  border-color: #e05656;
-  box-shadow: 0 0 0 3px rgba(224, 86, 86, 0.14);
-}
-.auth-options.is-invalid .invalid-feedback {
-  display: block;
-  flex-basis: 100%;
 }
 .auth-link {
   font-size: 0.88rem;

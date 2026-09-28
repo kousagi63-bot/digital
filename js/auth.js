@@ -80,7 +80,7 @@
       var show = input.type === 'password';
       input.type = show ? 'text' : 'password';
       var icon = btn.querySelector('i');
-      if (icon) icon.className = show ? 'bi bi-eye-slash' : 'bi bi-eye';
+      if (icon) icon.className = show ? 'bi bi-eye' : 'bi bi-eye-slash';
       btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
       input.focus();
     });
@@ -167,14 +167,6 @@
     radio.addEventListener('change', resetRoleError);
   });
 
-  var remember = qs('#rememberMe');
-  if (remember) {
-    remember.addEventListener('change', function () {
-      var options = qs('#authOptions');
-      if (options) options.classList.remove('is-invalid');
-    });
-  }
-
   /* ---------- Consent checkbox clears its error ---------- */
   var consent = qs('#agreeTerms');
   if (consent) {
@@ -226,12 +218,6 @@
           setError(pass, loginPassCheck.message);
           ok = false;
         }
-      }
-
-      if (remember && !remember.checked) {
-        var authOptions = qs('#authOptions');
-        if (authOptions) authOptions.classList.add('is-invalid');
-        ok = false;
       }
 
       if (!role || !ok) return;
@@ -314,9 +300,8 @@
         role: role
       };
       writeUsers(users);
-      writeSession(users[userKey]);
 
-      window.location.href = ROLE_DASH[role];
+      window.location.href = 'login.html';
     });
   }
 

@@ -653,6 +653,22 @@
 .b-chip--grey { color: #c9c9c9; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.16); }
 .b-chip--red { color: #e69b8a; background: rgba(224, 139, 120, 0.12); border: 1px solid rgba(224, 139, 120, 0.35); }
 
+/* ---------- Team member card ---------- */
+/* Name and status pill share one row. As a sibling of the card the pill was
+   top-aligned, so it straddled the name and the email line below it instead
+   of lining up with the member it belongs to. */
+.dash-member__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dash-member__head .dash-row__title {
+  min-width: 0;
+}
+.dash-member__head .b-chip {
+  flex: 0 0 auto;
+}
+
 /* ---------- Tables ---------- */
 .dash-table-wrap {
   overflow-x: auto;

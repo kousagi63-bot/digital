@@ -232,18 +232,46 @@ h1, h2, h3, h4, h5, h6 {
 .site-nav {
   height: var(--nav-h);
   padding: 0;
-  transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), height 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+  transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), height 0.4s var(--ease);
   background: transparent;
   z-index: 1030;
+  display: flex;
+  align-items: center;
+}
+
+.site-nav > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.site-nav .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
 }
 
 .site-nav.scrolled {
   height: 66px;
+  box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* The frosted background lives on a pseudo-element instead of on .site-nav
+   itself. backdrop-filter (like filter) makes an element the containing block
+   for its position: fixed descendants, and the mobile menu panel is a fixed
+   descendant of the navbar — once the page was scrolled the panel got sized
+   and clipped to the navbar's 66px height instead of the viewport. */
+.site-nav.scrolled::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .brand {
@@ -273,10 +301,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 767.98px) {
   .brand__logo {
-    height: 36px;
+    height: 46px;
   }
   .brand__logo--offcanvas {
-    height: 34px;
+    height: 42px;
   }
 }
 
@@ -356,32 +384,47 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------- Mobile Navbar Toggler & Offcanvas Sidebar ---------- */
+/* Kept identical to .dash-topbar__hamburger in css/dashboard.css — same 40px
+   box, 9px radius, same border/hover colours and the same bi-list glyph — so
+   the menu button is the same size and sits on the same axis on every page. */
 .site-nav .navbar-toggler {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 10px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
   color: #fff;
   cursor: pointer;
   transition: all 0.25s var(--ease);
   outline: none !important;
   box-shadow: none !important;
+  flex-shrink: 0;
 }
 
 .site-nav .navbar-toggler:hover,
 .site-nav .navbar-toggler:focus-visible {
   background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  box-shadow: none;
+}
+/* Keyboard focus still needs a visible ring — the hover border change alone is
+   not enough once the button is sized and coloured like the dashboard's. */
+.site-nav .navbar-toggler:focus-visible {
   box-shadow: 0 0 0 3px rgba(199, 197, 74, 0.3) !important;
 }
 
 .site-nav .navbar-toggler-icon {
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   vertical-align: middle;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -390,6 +433,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-offcanvas {
+  width: min(340px, 86vw) !important;
+  max-width: 100% !important;
   background: rgba(8, 8, 8, 0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -403,6 +448,19 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   padding: 20px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-offcanvas .offcanvas-title {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  line-height: 1;
+}
+
+.nav-offcanvas .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px 28px;
 }
 
 .nav-offcanvas .btn-close {
@@ -420,6 +478,7 @@ h1, h2, h3, h4, h5, h6 {
   filter: none !important;
   cursor: pointer;
   transition: all 0.25s var(--ease);
+  flex-shrink: 0;
 }
 
 .nav-offcanvas .btn-close:hover,
@@ -433,10 +492,18 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 992px) {
   .nav-offcanvas {
+    width: auto !important;
+    max-width: none !important;
     background: transparent;
     backdrop-filter: none;
     border-left: none;
     box-shadow: none;
+  }
+  .nav-offcanvas .offcanvas-body {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .navbar-toggler,
   .site-nav .navbar-toggler {
@@ -445,26 +512,74 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 991.98px) {
+  /* The menu panel lives inside the fixed navbar, so it is trapped in the
+     navbar's stacking context (z-index 1030) no matter how high its own
+     z-index is. Bootstrap's backdrop is a <body> child at 1040, which
+     therefore painted *over* the panel: the sidebar looked dimmed and every
+     tap inside it hit the backdrop and closed the menu. Dropping the backdrop
+     below the navbar puts the panel back on top, while still dimming the
+     page behind it. */
+  .offcanvas-backdrop {
+    z-index: 1015;
+  }
+}
+
+@media (max-width: 991.98px) {
+  :root {
+    --nav-h: 70px;
+  }
+  .site-nav {
+    height: 70px;
+  }
+  .site-nav.scrolled {
+    height: 64px;
+  }
   .nav-links {
-    gap: 12px;
+    margin: 0 !important;
+    padding: 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     align-items: stretch;
-    padding: 14px 0 6px;
+    width: 100%;
+  }
+  .nav-links .nav-item {
+    width: 100%;
   }
   .nav-links .nav-link {
-    padding: 10px 0;
-    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.78);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.25s var(--ease);
+  }
+  .nav-links .nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .nav-links .nav-link.active {
+    color: #fff;
+    background:
+      linear-gradient(rgba(93, 111, 34, 0.2), rgba(93, 111, 34, 0.14)),
+      rgba(199, 197, 74, 0.08);
+    border-color: rgba(199, 197, 74, 0.35);
   }
   .nav-links .nav-link::after {
-    left: 0;
-    right: 0;
+    display: none !important;
   }
   .nav-cta {
-    margin-top: 22px;
-    padding-top: 22px;
+    margin-top: auto;
+    padding-top: 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
   .nav-cta .btn {
     width: 100%;
+    justify-content: center;
   }
 }
 
@@ -3155,6 +3270,285 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero__video-chip strong {
     font-size: 0.95rem;
+  }
+}
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #050505;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.38s ease, visibility 0.38s ease;
+}
+
+html.page-transition-active,
+html.page-transition-active body {
+  overflow: hidden;
+}
+
+.page-transition::before {
+  content: "";
+  position: absolute;
+  width: min(82vw, 760px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(199, 197, 74, 0.2), rgba(93, 111, 34, 0.08) 42%, transparent 70%);
+  filter: blur(12px);
+  animation: page-transition-glow 2.6s ease-in-out infinite;
+}
+
+.page-transition::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent);
+}
+
+.page-transition.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.page-transition.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Destination page: the same curtain carried over from the outgoing document.
+   No entry transition, it only lifts. */
+.page-transition.is-resumed {
+  transition: none;
+}
+.page-transition.is-resumed .page-transition__inner {
+  transition: none;
+  opacity: 1;
+  transform: none;
+}
+.page-transition.is-resumed.is-leaving {
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+/* ---------- Preloader curtain ----------
+   Every page ships this node as the first child of <body> so it is part of the
+   very first paint. Creating the overlay from JS at the end of <body> instead
+   let the destination page paint first, which showed the incoming page for a
+   frame before the preloader appeared. It stays hidden (display: none) unless
+   the inline head script found a pending transition, so a direct visit or a
+   refresh never shows it. */
+.page-preboot {
+  display: none;
+}
+html.nav-pending .page-preboot {
+  display: grid;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: none;
+  /* Failsafe: if JS never runs, never trap the visitor behind the curtain. */
+  animation: page-preboot-failsafe 0s linear 4s forwards;
+}
+html.nav-pending .page-preboot .page-transition__inner {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+html.nav-pending .page-preboot.is-leaving {
+  display: grid;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+  animation: none;
+}
+@keyframes page-preboot-failsafe {
+  to {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.page-transition__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 32px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(18px) scale(0.97);
+  transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-transition.is-visible .page-transition__inner {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.page-transition__mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(199, 197, 74, 0.55);
+  border-radius: 50%;
+  box-shadow: 0 0 42px rgba(199, 197, 74, 0.18);
+}
+
+.page-transition__mark::before,
+.page-transition__mark::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.page-transition__mark::before {
+  inset: -10px;
+  border: 1px solid rgba(199, 197, 74, 0.5);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  animation: page-transition-spin 1.45s linear infinite;
+}
+
+.page-transition__mark::after {
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  animation: page-transition-pulse 1.8s ease-in-out infinite;
+}
+
+.page-transition__mark span {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  background: linear-gradient(135deg, #fff, #c7c54a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-transition__brand {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.page-transition__brand span {
+  color: #c7c54a;
+}
+
+.page-transition__label {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.page-transition__bar {
+  position: relative;
+  width: min(260px, 62vw);
+  height: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.page-transition__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 45%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #5d6f22, #c7c54a, #fff);
+  animation: page-transition-progress 1.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.page-transition__dots {
+  display: flex;
+  gap: 7px;
+  margin-top: 2px;
+}
+
+.page-transition__dots i {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c7c54a;
+  animation: page-transition-dot 1s ease-in-out infinite;
+}
+
+.page-transition__dots i:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.page-transition__dots i:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+@keyframes page-transition-glow {
+  0%, 100% { opacity: 0.55; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes page-transition-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes page-transition-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.86); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes page-transition-progress {
+  0% { transform: translateX(-110%); }
+  100% { transform: translateX(245%); }
+}
+
+@keyframes page-transition-dot {
+  0%, 100% { opacity: 0.25; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-4px); }
+}
+
+@media (max-width: 575.98px) {
+  .page-transition__inner {
+    gap: 12px;
+    padding: 24px 18px;
+  }
+
+  .page-transition__mark {
+    width: 82px;
+    height: 82px;
+  }
+
+  .page-transition__brand {
+    letter-spacing: 0.22em;
   }
 }
 
