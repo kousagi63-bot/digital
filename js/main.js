@@ -243,7 +243,13 @@
         instance.hide();
       }
 
-      const top = target.getBoundingClientRect().top + window.scrollY - 66;
+      // Offset by the navbar's real height. It is not a constant: it is
+      // --nav-h at the top of the page, --nav-h - 14px once scrolled, and the
+      // small-screen overrides change both, so a hardcoded value dropped the
+      // target section under the bar and it then slid as the bar resized.
+      const bar = document.getElementById("siteNav");
+      const barH = bar ? bar.getBoundingClientRect().height : 66;
+      const top = target.getBoundingClientRect().top + window.scrollY - barH;
       window.scrollTo({ top: top, behavior: "smooth" });
     });
   });

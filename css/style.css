@@ -76,6 +76,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-h);
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -85,7 +87,8 @@ body {
   color: var(--text);
   font-size: 16.5px;
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -136,6 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 .section {
   padding: 110px 0;
   position: relative;
+  overflow-x: clip;
   background: var(--section-bg);
   color: var(--text);
   transition: background 0.4s var(--ease);
@@ -230,6 +234,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------- Navbar (always black bar) ---------- */
 .site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100vw;
   height: var(--nav-h);
   padding: 0;
   transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), height 0.4s var(--ease);
@@ -432,9 +442,22 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 100% 100%;
 }
 
+.site-nav .navbar-toggler i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: 0;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
 .nav-offcanvas {
-  width: min(340px, 86vw) !important;
+  width: min(360px, 88vw) !important;
   max-width: 100% !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  top: 0 !important;
+  bottom: 0 !important;
   background: rgba(8, 8, 8, 0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -461,6 +484,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   padding: 20px 24px 28px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .nav-offcanvas .btn-close {
@@ -531,8 +556,14 @@ h1, h2, h3, h4, h5, h6 {
   .site-nav {
     height: 70px;
   }
+  /* Keep the bar the same height once the page is scrolled. The brand and the
+     menu button are centred inside it, so shrinking the bar 70px -> 64px slid
+     both of them 3px every time the scroll position crossed the .scrolled
+     threshold - the button visibly jumped around while reading the page. The
+     frosted background, border and shadow still arrive via .site-nav.scrolled,
+     so only the moving part is dropped. */
   .site-nav.scrolled {
-    height: 64px;
+    height: 70px;
   }
   .nav-links {
     margin: 0 !important;
@@ -580,6 +611,58 @@ h1, h2, h3, h4, h5, h6 {
   .nav-cta .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-nav > .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .nav-offcanvas {
+    width: 100% !important;
+    max-width: 100vw !important;
+    border-left: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-offcanvas .offcanvas-header {
+    padding: 16px 18px;
+  }
+  .nav-offcanvas .offcanvas-body {
+    padding: 16px 18px 24px;
+  }
+}
+
+/* ---------- Mobile gutter overflow guard ----------
+   Bootstrap's .g-* utilities re-declare --bs-gutter-x on .row itself (g-4 ->
+   1.5rem, g-5 -> 3rem), so .row is pulled out of its container by half that
+   gutter: 12px for g-4, 24px for g-5. Below 576px .container is fluid and
+   carries only 12px of padding, so the wider gutter shoved the row - and every
+   full-width .col-* inside it, since .row > * is width: 100% - past the right
+   edge of the screen. That left the document 12px wider than the viewport, and
+   because .site-nav is position: fixed it stretched to the full scroll width,
+   pushing the menu button flush against the screen edge (and on about.html
+   almost entirely off it) while the logo kept its 12px inset. Re-base the
+   pull-back and the column padding on the container's own 12px so the row can
+   never exceed the screen and every section's text shares one left edge. */
+@media (max-width: 991.98px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container > .row,
+  .container .row[class*="g-"] {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .container > .row > *,
+  .container .row[class*="g-"] > * {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -1769,9 +1852,18 @@ h1, h2, h3, h4, h5, h6 {
   to   { transform: rotateY(var(--tilt-amp)) translateZ(30px); }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
+  /* The tilt rotates the column itself, so the perspective projection paints
+     wider than the column's layout box. On mobile and tablet devices, this
+     wideness nudges the fixed navbar sideways. Disable 3D tilt below 992px. */
   .process [class*="col-"] {
-    --tilt-amp: 6deg;
+    --tilt-amp: 0deg;
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+  .process .row {
+    perspective: none;
   }
 }
 
@@ -2141,9 +2233,15 @@ h1, h2, h3, h4, h5, h6 {
   to   { transform: rotateY(var(--sway-amp)) translateY(-6px) translateZ(28px); }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .values [class*="col-"] {
-    --sway-amp: 5deg;
+    --sway-amp: 0deg;
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+  .values .row {
+    perspective: none;
   }
 }
 
@@ -2173,9 +2271,15 @@ h1, h2, h3, h4, h5, h6 {
   to   { transform: rotateY(var(--flip-amp)) translateZ(26px); }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .methodology [class*="col-"] {
-    --flip-amp: 5deg;
+    --flip-amp: 0deg;
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+  .methodology .row {
+    perspective: none;
   }
 }
 
@@ -3071,6 +3175,18 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   translate: none;
   scale: none;
+}
+
+@media (max-width: 991.98px) {
+  /* Every block is full width on a phone, so a horizontal pre-reveal offset
+     just pushed the whole block past the edge of the screen - it was what made
+     about.html 32px too wide until its timeline slid into view, and therefore
+     what dragged the navbar and the menu button off the right edge. Fall back
+     to the same vertical rise the default reveal uses. */
+  .js [data-reveal="left"],
+  .js [data-reveal="right"] {
+    translate: 0 30px;
+  }
 }
 
 /* ---------- Responsive ---------- */
